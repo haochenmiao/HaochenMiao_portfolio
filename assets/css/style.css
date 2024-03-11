@@ -511,9 +511,17 @@ section .container {
 # About
 --------------------------------------------------------------*/
 .about-me .content h3 {
-  font-weight: 700;
-  font-size: 26px;
+  font-weight: bold;
+  font-size: 36px;
   color: #18d26e;
+  margin-bottom: 24px; 
+}
+
+.about-me .content p {
+  color: #ffffff; /* If the paragraph text is also white */
+  font-size: 18px; /* Match the size from the second image if it looks similar */
+  margin-bottom: 24px; /* Spacing after paragraphs */
+  line-height: 1.6; /* Adjust line height for readability */
 }
 
 .about-me .content ul {
@@ -522,9 +530,10 @@ section .container {
 }
 
 .about-me .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
+  color: #ffffff;
+  font-size: 18px; 
+  margin-bottom: 16px; 
+  display: block; 
 }
 
 .about-me .content ul strong {
@@ -794,16 +803,16 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Services
+# Blogs
 --------------------------------------------------------------*/
-.services .icon-box {
+.blogs .icon-box {
   text-align: center;
   background: rgba(204, 204, 204, 0.1);
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
 }
 
-.services .icon-box .icon {
+.blogs .icon-box .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
@@ -817,12 +826,12 @@ section .container {
   transform-style: preserve-3d;
 }
 
-.services .icon-box .icon i {
+.blogs .icon-box .icon i {
   color: #fff;
   font-size: 28px;
 }
 
-.services .icon-box .icon::before {
+.blogs .icon-box .icon::before {
   position: absolute;
   content: "";
   left: -8px;
@@ -835,41 +844,41 @@ section .container {
   transform: translateZ(-1px);
 }
 
-.services .icon-box h4 {
+.blogs .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.services .icon-box h4 a {
+.blogs .icon-box h4 a {
   color: #fff;
 }
 
-.services .icon-box p {
+.blogs .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.services .icon-box:hover {
+.blogs .icon-box:hover {
   background: #18d26e;
   border-color: #18d26e;
 }
 
-.services .icon-box:hover .icon {
+.blogs .icon-box:hover .icon {
   background: #fff;
 }
 
-.services .icon-box:hover .icon i {
+.blogs .icon-box:hover .icon i {
   color: #18d26e;
 }
 
-.services .icon-box:hover .icon::before {
+.blogs .icon-box:hover .icon::before {
   background: #35e888;
 }
 
-.services .icon-box:hover h4 a,
-.services .icon-box:hover p {
+.blogs .icon-box:hover h4 a,
+.blogs .icon-box:hover p {
   color: #fff;
 }
 
