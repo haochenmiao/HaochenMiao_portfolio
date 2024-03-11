@@ -621,6 +621,36 @@ section .container {
 }
 
 /*--------------------------------------------------------------
+# Interests
+--------------------------------------------------------------*/
+.interests .icon-box {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: ease-in-out 0.3s;
+}
+
+.interests .icon-box i {
+  font-size: 32px;
+  padding-right: 10px;
+  line-height: 1;
+}
+
+.interests .icon-box h3 {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 16px;
+  color: #fff;
+}
+
+.interests .icon-box:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials .testimonial-item {
@@ -669,15 +699,20 @@ section .container {
 }
 
 .testimonials .testimonial-item .quote-icon-left {
-  top: 50%;
-  left: 10px; /* Adjust based on actual padding */
-  transform: translate(0, -50%);
+  /*top: 50%;
+  /*left: 10px; /* Adjust based on actual padding */
+  /*transform: translate(0, -50%);*/
+  display: inline-block;
+  left: -10px;
+  position: relative;
+
 }
 
 .testimonials .testimonial-item .quote-icon-right {
-  top: 50%;
-  right: 10px; /* Adjust based on actual padding */
-  transform: translate(0, -50%);
+  bottom: -10px; /* Adjust as needed to align with the bottom of the text */
+  right: 10px; /* Keep aligned to the right side, adjust as needed */
+  transform: none; /* Remove transform as we're positioning from the bottom */
+  top: auto; /* Since we're using bottom, we reset top */
 }
 
 /* Pagination */
