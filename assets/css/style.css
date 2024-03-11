@@ -621,100 +621,66 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Interests
---------------------------------------------------------------*/
-.interests .icon-box {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  transition: ease-in-out 0.3s;
-}
-
-.interests .icon-box i {
-  font-size: 32px;
-  padding-right: 10px;
-  line-height: 1;
-}
-
-.interests .icon-box h3 {
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-size: 16px;
-  color: #fff;
-}
-
-.interests .icon-box:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
 .testimonials .testimonial-item {
-  box-sizing: content-box;
+  box-sizing: border-box;
   min-height: 320px;
+  padding: 40px; /* Provide horizontal padding for the quote icons */
+  text-align: center; /* Center the text and content */
+  position: relative; /* For absolute positioning of the icons */
 }
 
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
   border-radius: 50%;
-  margin: -40px 0 0 40px;
-  position: relative;
+  margin: 0 auto; /* Center the image horizontally */
+  position: relative; /* To stay in the flow of the document */
   z-index: 2;
   border: 6px solid rgba(255, 255, 255, 0.12);
+  display: block; /* To enable margin auto to work */
 }
 
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 45px;
-  color: #fff;
-}
-
+.testimonials .testimonial-item h3,
 .testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: #999;
-  margin: 0 0 0 45px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: rgba(255, 255, 255, 0.25);
-  font-size: 26px;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
+  color: #fff;
+  margin: 10px 0; /* Margin for spacing */
 }
 
 .testimonials .testimonial-item p {
   font-style: italic;
-  margin: 0 15px 0 15px;
-  padding: 20px 20px 60px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
-  border-radius: 6px;
-  position: relative;
-  z-index: 1;
+  margin: 20px 0; /* Space above and below the paragraph */
+  padding: 0; /* Padding reset */
+  background: transparent; /* No background for the paragraph */
+  position: relative; /* To stay in the flow of the document */
+  display: inline-block; /* Allows the block to only be as wide as its content */
+  z-index: 2;
 }
 
+/* Quote Icons */
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 26px;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Offset the y-position to the center */
+  z-index: 3; /* Higher than the text */
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  top: 50%;
+  left: 10px; /* Adjust based on actual padding */
+  transform: translate(0, -50%);
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  top: 50%;
+  right: 10px; /* Adjust based on actual padding */
+  transform: translate(0, -50%);
+}
+
+/* Pagination */
 .testimonials .swiper-pagination {
   margin-top: 20px;
   position: relative;
@@ -723,13 +689,13 @@ section .container {
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  opacity: 1;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #18d26e;
 }
+
 
 /*--------------------------------------------------------------
 # Resume
