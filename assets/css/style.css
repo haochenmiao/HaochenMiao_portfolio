@@ -1117,9 +1117,15 @@ section .container {
 --------------------------------------------------------------*/
 
 iframe {
-  width: 100%;
-  height: 824px; /* You can also adjust the height as needed */
-  border: 0; /* This removes the border */
+  max-width: 100%; /* Limit the width to not exceed the width of its parent */
+  border: none;
+}
+
+@media (max-width: 768px) {
+  iframe {
+    width: 100%; /* Set the width to be full width on smaller screens */
+    height: auto; /* Adjust height accordingly */
+  }
 }
 
 .contact .form-btn {
