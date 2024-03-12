@@ -1115,48 +1115,20 @@ section .container {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact .form-group {
-  margin-bottom: 20px;
-}
 
-.contact .form-control {
-  background: transparent;
-  border: 1px solid #fff;
-  border-radius: 0;
-  color: #fff;
-  font-size: 16px;
-  padding: 15px;
+iframe {
   width: 100%;
+  height: 824px; /* You can also adjust the height as needed */
+  border: 0; /* This removes the border */
 }
 
-.contact .form-control::placeholder {
-  color: #aaa;
-}
-
-.contact .form-control:focus {
-  border-color: #18d26e;
-  box-shadow: none;
-}
-
-.contact .bi-send-fill {
+.contact .form-btn {
   background-color: #18d26e; /* Button background color */
-  border: none; /* Removing the border */
-  border-radius: 25px; /* Adjusted for rounded but not too circular edges */
-  padding: 15px 30px; /* Uniform padding for a wider button */
-  color: #fff; /* Text color */
-  font-size: 18px;
-  font-weight: bold; /* Bold font for the text */
-  transition: all 0.3s ease-in-out;
-  cursor: pointer; /* Cursor to indicate it's clickable */
-  display: inline-block; /* Allows the use of padding and center alignment */
-  text-align: center; /* Center the text inside the button */
-  vertical-align: middle; /* Align text vertically */
-  line-height: 1; /* Adjust line-height to prevent extra height */
-  outline: none; /* Remove the focus outline */
-  text-decoration: none; /* Remove underline from text if any */
+  /* Other styles remain unchanged */
 }
 
-.contact .bi-send-fill:hover {
+/* Update the .bi-send-fill class to .form-btn if it is used for the send button */
+.contact .form-btn:hover {
   background-color: #15bb62; /* Darker shade for hover state */
 }
 
@@ -1179,6 +1151,83 @@ section .container {
   border: none;
   filter: grayscale(1) invert(1);
 }
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.form-input {
+  color: #000; /* Make sure this is a color that contrasts with your input background */
+  background-color: #fff;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+  padding: 13px 20px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  outline: none;
+}
+
+.form-input::placeholder { color: #000; }
+
+.form-input:focus { border-color: var(--orange-yellow-crayola); }
+
+textarea.form-input {
+  min-height: 100px;
+  height: 120px;
+  max-height: 200px;
+  resize: vertical;
+  margin-bottom: 25px;
+}
+
+textarea.form-input::-webkit-resizer { display: none; }
+
+.form-input:focus:invalid { border-color: var(--bittersweet-shimmer); }
+
+.form-btn {
+  position: relative;
+  width: 100%;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.form-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.form-btn ion-icon { font-size: 16px; }
+
+.form-btn:hover { background: var(--bg-gradient-yellow-1); }
+
+.form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+
+.form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-btn:disabled:hover { background: var(--border-gradient-onyx); }
+
+.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
 /*--------------------------------------------------------------
 # Credits
