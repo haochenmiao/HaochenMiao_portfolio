@@ -63,13 +63,48 @@ h2 {
   font-size: 1.05rem !important; /* Increase the size of social media icons */
 }
 
+/* Smaller header text size for non-homepage sections */
+.header-top h1 {
+  font-size: 2rem !important; /* Adjust as necessary for your desired smaller size */
+}
+
+.header-top h2 {
+  font-size: 1.5rem !important; /* Adjust as necessary for your desired smaller size */
+}
+
 /* Ensure canvas is behind the header content */
 canvas {
   display: block;
   pointer-events: auto;
   vertical-align: bottom;
   position: absolute;
+  z-index: 1; /*changes*/
+}
+
+/* Ensure other elements like the header or text have a higher z-index */
+#header, #main-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Modify the canvas area to cover the entire viewport */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+}
+
+/* Set pointer events to avoid blocking interactions */
+#header, #main-content {
+  pointer-events: none; /* Ensure these elements don't block interactions with the particles */
+}
+
+/* Re-enable pointer events for specific interactive elements */
+.navbar a, .contact-link {
+  pointer-events: auto;
 }
 
 
@@ -115,7 +150,7 @@ canvas {
 /* ---- particles.js container ---- */
 
 #particles-js{
-  position: absolute; /* or 'fixed' if you want it to cover the whole screen */
+  position: fixed; /* or 'fixed' if you want it to cover the whole screen */
   top: 0;
   left: 0;
   width: 100%;
@@ -373,7 +408,7 @@ h6 {
 .navbar li:hover>a:before,
 .navbar .active:before {
   visibility: visible;
-  width: 25px;
+  width: 100%;
 }
 
 .navbar a:hover,
