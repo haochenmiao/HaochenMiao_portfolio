@@ -110,16 +110,16 @@ canvas {
 @media (max-width: 1024px) {
   /* Adjust for iPads and smaller tablets */
   #header h1 {
-    font-size: 3rem; /* Reduce the size of the main heading */
+    font-size: 2.5rem; /* Reduce the size of the main heading */
     text-align: center; /* Center align the text */
   }
 
   #header h2 {
-    font-size: 1.5rem; /* Adjust the size as needed */
-    padding-top: 10px; /* Adjust for spacing above */
+    font-size: 1.2rem; /* Adjust the size as needed */
+    padding-top: 20px; /* Adjust for spacing above */
     text-align: center;
-    padding-bottom: 20px; /* Add padding below to create space between the underline and the next text */
-    line-height: 1.6; /* Adjust line-height for better vertical spacing */
+    padding-bottom: 30px; /* Add padding below to create space between the underline and the next text */
+    line-height: 1.8; /* Adjust line-height for better vertical spacing */
   }
 
   #header h2 span {
