@@ -107,6 +107,57 @@ canvas {
   pointer-events: auto;
 }
 
+@media (max-width: 1024px) {
+  /* Adjust for iPads and smaller tablets */
+  #header h1 {
+      font-size: 3rem; /* Reduce the size of the main heading */
+  }
+
+  #header h2 {
+      font-size: 1.5rem; /* Adjust the size of the subheading */
+  }
+
+  #header .container {
+    width: 90%; /* Reduce the width for tablets */
+  }
+
+}
+
+@media (max-width: 768px) {
+  /* Adjust for smartphones */
+  #header h1 {
+      line-height: 1.2;
+      font-size: 8vw;
+  }
+
+  #header h2 {
+      padding-top: 10px;
+      font-size: 5vw;
+  }
+
+  #header h2 span {
+      font-size: 1.25rem; /* Adjust the underline span font size */
+  }
+
+  #header h2 span {
+      border-bottom: 1px solid #18d26e; /* Make the underline thinner */
+  }
+
+  .social-links a {
+      font-size: 14px; /* Reduce the size of the social media icons */
+  }
+  #header .container {
+    padding: 0 20px; /* Add padding to the container to prevent text from touching the edges */
+    width: 95%;
+    text-align: center;
+}
+
+  #header .social-links {
+    margin-top: 20px; /* Reduce the margin-top to fit the social icons better */
+  }
+
+
+}
 
 /* ---- stats.js ---- */
 
@@ -827,12 +878,24 @@ section .container {
   margin-bottom: 10px;
 }
 
+.resume .resume-item ul li::before {
+  content: "•"; /* Unicode bullet character */
+  color: #18d26e; /* Bullet color */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em; /* Adjust position of the bullet */
+}
+
+
 .resume .resume-item ul {
   padding-left: 20px;
+  list-style-type: disc !important; /* Add this line to specify bullet points */
 }
 
 .resume .resume-item ul li {
   padding-bottom: 10px;
+  margin-left: 20px; /* Optional: Adjust the left margin to control the spacing between the bullet and text */
 }
 
 .resume .resume-item:last-child {
