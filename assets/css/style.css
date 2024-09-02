@@ -119,12 +119,13 @@ canvas {
     padding-top: 10px; /* Adjust for spacing above */
     text-align: center;
     padding-bottom: 10px; /* Add padding below to create space between the underline and the next text */
-}
+    line-height: 1.5; /* Adjust line-height for better vertical spacing */
+  }
 
-#header h2 span {
+  #header h2 span {
     border-bottom: 1px solid #18d26e; /* Adjust the thickness of the underline */
     padding-bottom: 2px; /* Add padding to the bottom of the span to separate it from the text below */
-}
+  }
 
   #header .container {
     width: 100%; /* Make sure the container takes the full width */
@@ -142,6 +143,7 @@ canvas {
     justify-content: center; /* Center align social links */
   }
 }
+
 
 @media (max-width: 768px) {
   /* Adjust for smartphones */
