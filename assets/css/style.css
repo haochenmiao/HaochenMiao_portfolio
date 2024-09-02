@@ -118,8 +118,8 @@ canvas {
     font-size: 1.5rem; /* Adjust the size as needed */
     padding-top: 10px; /* Adjust for spacing above */
     text-align: center;
-    padding-bottom: 10px; /* Add padding below to create space between the underline and the next text */
-    line-height: 1.5; /* Adjust line-height for better vertical spacing */
+    padding-bottom: 20px; /* Add padding below to create space between the underline and the next text */
+    line-height: 1.6; /* Adjust line-height for better vertical spacing */
   }
 
   #header h2 span {
