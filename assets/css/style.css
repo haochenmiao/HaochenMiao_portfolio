@@ -115,10 +115,15 @@ canvas {
   }
 
   #header h2 {
-    font-size: 1.5rem; /* Adjust the size of the subheading */
-    text-align: center; /* Center align the text */
-    margin-top: 10px; /* Add space between the heading and subheading */
-  }
+    font-size: 1.5rem; /* Adjust the size as needed */
+    padding-top: 10px; /* Adjust for spacing above */
+    padding-bottom: 10px; /* Add padding below to create space between the underline and the next text */
+}
+
+#header h2 span {
+    border-bottom: 1px solid #18d26e; /* Adjust the thickness of the underline */
+    padding-bottom: 2px; /* Add padding to the bottom of the span to separate it from the text below */
+}
 
   #header .container {
     width: 100%; /* Make sure the container takes the full width */
