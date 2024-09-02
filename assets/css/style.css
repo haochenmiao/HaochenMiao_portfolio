@@ -518,6 +518,7 @@ h6 {
 }
 
 .navbar-mobile {
+  display: block !important;
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -526,7 +527,7 @@ h6 {
   bottom: 0;
   background: rgba(0, 0, 0, 0.9);
   transition: 0.3s;
-  z-index: 999;
+  z-index: 9999;
   margin-top: 0;
 }
 
@@ -534,9 +535,12 @@ h6 {
   position: absolute;
   top: 15px;
   right: 15px;
+  z-index: 10000;
 }
 
 .navbar-mobile ul {
+  list-style: none;
+  padding-left: 0;
   display: block;
   position: absolute;
   top: 55px;
@@ -549,19 +553,62 @@ h6 {
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.navbar-mobile li {
-  padding: 12px 20px;
+.navbar-mobile ul li {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar-mobile li+li {
+.navbar-mobile ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+#header.header-top {
+  height: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+#header.header-top .social-links,
+#header.header-top h2 {
+  display: none;
+}
+
+#header.header-top h1 {
+  margin-right: auto;
+  font-size: 36px;
+}
+
+#header.header-top img {
+  max-height: 60px;
+  margin-right: 20px !important;
+}
+
+#header.header-top .container {
+  display: flex;
+  align-items: center;
+}
+
+#header.header-top .navbar {
   margin: 0;
 }
 
-.navbar-mobile a,
-.navbar-mobile a:focus {
-  font-size: 16px;
-  position: relative;
+@media (max-width: 768px) {
+  #header.header-top {
+    height: 60px;
+  }
+
+  #header.header-top h1 {
+    font-size: 26px;
+  }
 }
+
+
 
 /*--------------------------------------------------------------
 # Sections General
