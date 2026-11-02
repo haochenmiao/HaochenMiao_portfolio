@@ -1581,10 +1581,13 @@
    /* Typography — base */
    .portfolio-details { font-family: 'Space Grotesk', sans-serif; color: #0d0f12; background: #fff; }
    .portfolio-details .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-   /* Allow long words like "Accessibility" to break so the title stays inside the 240px sidebar */
-   .portfolio-details .st-title { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; margin: 10px 0 8px; overflow-wrap: break-word; hyphens: auto; }
+   /* Override the global `h1 { font-size: 5rem !important }` from the homepage styles so the sidebar title
+      renders at its intended 24px. Without the override the title is ~80px and chops mid-word in a 240px column. */
+   .portfolio-details .st-title { font-family: 'Space Grotesk', sans-serif; font-size: 24px !important; font-weight: 500; letter-spacing: -0.01em; margin: 10px 0 8px; overflow-wrap: break-word; hyphens: auto; line-height: 1.15; }
    .portfolio-details .st-sidebar { min-width: 0; }
    .portfolio-details .st-main { min-width: 0; }
+   /* Same for the Florida page */
+   .ff-detail .ff-title { font-size: 28px !important; }
    .portfolio-details .st-pitch { font-size: 14px; line-height: 1.55; color: #4a4a4a; }
 
    /* Sidebar */
