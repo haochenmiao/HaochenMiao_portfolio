@@ -1277,21 +1277,13 @@
      margin: 0;
    }
    
+   /* Chain-icon row is suppressed — the whole card is clickable (see main.js) */
    .portfolio .portfolio-wrap .portfolio-links {
-     text-align: center;
-     z-index: 4;
+     display: none;
    }
-   
-   .portfolio .portfolio-wrap .portfolio-links a {
-     color: #fff;
-     margin: 0 2px;
-     font-size: 28px;
-     display: inline-block;
-     transition: 0.3s;
-   }
-   
-   .portfolio .portfolio-wrap .portfolio-links a:hover {
-     color: #63eda3;
+
+   .portfolio .portfolio-wrap[data-href] {
+     cursor: pointer;
    }
    
    .portfolio .portfolio-wrap:hover::before {
@@ -1589,7 +1581,10 @@
    /* Typography — base */
    .portfolio-details { font-family: 'Space Grotesk', sans-serif; color: #0d0f12; background: #fff; }
    .portfolio-details .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-   .portfolio-details .st-title { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; margin: 10px 0 8px; }
+   /* Allow long words like "Accessibility" to break so the title stays inside the 240px sidebar */
+   .portfolio-details .st-title { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; margin: 10px 0 8px; overflow-wrap: break-word; hyphens: auto; }
+   .portfolio-details .st-sidebar { min-width: 0; }
+   .portfolio-details .st-main { min-width: 0; }
    .portfolio-details .st-pitch { font-size: 14px; line-height: 1.55; color: #4a4a4a; }
 
    /* Sidebar */

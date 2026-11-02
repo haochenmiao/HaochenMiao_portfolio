@@ -217,6 +217,28 @@
 
 
   /**
+   * Portfolio cards: whole wrap is clickable, pointing at the inner details link.
+   * Prefers a .portfolio-details-lightbox target over a .portfolio-lightbox image target
+   * so the click opens the detail PAGE, not the image gallery.
+   */
+  window.addEventListener('load', () => {
+    select('.portfolio-wrap', true).forEach((wrap) => {
+      let target = wrap.querySelector('a.portfolio-details-lightbox')
+                || wrap.querySelector('a[href$=".html"]')
+                || wrap.querySelector('a');
+      if (!target) return;
+      let href = target.getAttribute('href');
+      if (!href || href === '#') return;
+      wrap.setAttribute('data-href', href);
+      wrap.addEventListener('click', (e) => {
+        // Let real inner links (e.g. a slide-dot anchor) do their own thing
+        if (e.target.closest('a, button, input')) return;
+        window.location.href = href;
+      });
+    });
+  });
+
+  /**
    * Portfolio card slideshows: cycle .slide/.dot every 3.2s, staggered start, pause on hover
    */
   window.addEventListener('load', () => {
