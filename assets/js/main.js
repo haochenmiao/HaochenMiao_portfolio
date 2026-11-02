@@ -267,6 +267,24 @@
   });
 
   /**
+   * Portfolio-details close button: injects an "X" in the top-right of every detail
+   * page that navigates back to the portfolio grid on the homepage.
+   */
+  window.addEventListener('load', () => {
+    let detail = select('.portfolio-details');
+    if (!detail) return;
+    if (document.querySelector('.portfolio-close')) return;
+
+    let close = document.createElement('a');
+    close.className = 'portfolio-close';
+    close.setAttribute('href', 'index.html#portfolio');
+    close.setAttribute('aria-label', 'Close and return to portfolio');
+    close.setAttribute('title', 'Back to portfolio');
+    close.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>';
+    document.body.appendChild(close);
+  });
+
+  /**
    * Portfolio-details tabs: scoped to .portfolio-details, with deep-link + lazy iframes
    */
   window.addEventListener('load', () => {
