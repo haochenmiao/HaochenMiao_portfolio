@@ -15,6 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -575,19 +576,32 @@
 
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Data Visualization</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
+          <div class="portfolio-filter-group">
+            <ul id="portfolio-roles">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".role-de">Data Engineering</li>
+              <li data-filter=".role-ds">Data Science</li>
+              <li data-filter=".role-da">Data Analytics</li>
+              <li data-filter=".role-gis">GIS</li>
+              <li data-filter=".role-se">Software Engineering</li>
+            </ul>
+            <ul id="portfolio-types">
+              <li data-filter="*" class="filter-active">All types</li>
+              <li data-filter=".type-dashboard">Dashboard</li>
+              <li data-filter=".type-web">Web app</li>
+              <li data-filter=".type-pipeline">Pipeline</li>
+              <li data-filter=".type-map">Map</li>
+              <li data-filter=".type-model">Model</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="row portfolio-container">
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-4 col-md-6 portfolio-item role-ds type-dashboard">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-ds">DS</span>
             <!-- Swiper container for the images -->
             <div class="swiper portfolio-slider">
               <div class="swiper-wrapper">
@@ -635,8 +649,9 @@
         
         
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="col-lg-4 col-md-6 portfolio-item role-se type-web">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-se">SE</span>
             <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 3</h4>
@@ -649,8 +664,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-4 col-md-6 portfolio-item role-da type-dashboard">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-da">DA</span>
             <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>App 2</h4>
@@ -663,8 +679,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="col-lg-4 col-md-6 portfolio-item role-da type-dashboard">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-da">DA</span>
             <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 2</h4>
@@ -677,8 +694,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="col-lg-4 col-md-6 portfolio-item role-da type-dashboard">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-da">DA</span>
             <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 2</h4>
@@ -691,8 +709,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-4 col-md-6 portfolio-item role-se type-web">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-se">SE</span>
             <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>3D Sound Frequency & Amplitude Visualization</h4>
@@ -705,8 +724,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="col-lg-4 col-md-6 portfolio-item role-de type-pipeline">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-de">DE</span>
             <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 1</h4>
@@ -719,8 +739,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="col-lg-4 col-md-6 portfolio-item role-gis type-map">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-gis">GIS</span>
             <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 3</h4>
@@ -733,8 +754,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="col-lg-4 col-md-6 portfolio-item role-ds type-model">
           <div class="portfolio-wrap">
+            <span class="role-badge role-badge-ds">DS</span>
             <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 3</h4>
@@ -742,6 +764,25 @@
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details_8.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item role-gis role-de type-map">
+          <div class="portfolio-wrap">
+            <span class="role-badge role-badge-gis">GIS</span>
+            <div class="portfolio-slides">
+              <img src="assets/img/portfolio/sound-transit-system.jpg" class="slide active" alt="Full Link system map, 23 stations highlighted">
+              <img src="assets/img/portfolio/sound-transit-2d-audit.jpg" class="slide" alt="2D station audit view with pathways color-coded by severity">
+              <img src="assets/img/portfolio/sound-transit-3d-section.jpg" class="slide" alt="3D vertical section through Street / Mezzanine / Platform">
+              <div class="slide-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+            </div>
+            <div class="portfolio-info">
+              <h4>Link Station Accessibility Atlas</h4>
+              <p>GIS · Data engineering · Sound Transit</p>
+              <div class="portfolio-links">
+                <a href="portfolio-details-sound-transit.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>

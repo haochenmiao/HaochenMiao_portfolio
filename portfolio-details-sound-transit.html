@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Link Station Accessibility Atlas - Haochen Miao</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+    <div id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="st-detail-grid">
+          <!-- STICKY SIDEBAR -->
+          <aside class="st-sidebar">
+            <div class="st-badges">
+              <span class="role-badge role-badge-GIS">GIS</span>
+              <span class="role-badge role-badge-DE">DE</span>
+              <span class="st-live-chip">Live</span>
+            </div>
+            <h1 class="st-title">Link Station Accessibility Atlas</h1>
+            <p class="st-pitch">Extending GTFS Pathways with ADAAG-aligned attributes that tell you whether a station connection is actually usable.</p>
+
+            <dl class="st-meta">
+              <div><dt>Timeline</dt><dd>Sept 2023 – Mar 2024<br><span class="st-sub">Replica · Oct 2025</span></dd></div>
+              <div><dt>Role</dt><dd>GIS Analyst<br>Data Engineer</dd></div>
+              <div><dt>Partner</dt><dd>Taskar Center for Accessible Technology · UW</dd></div>
+              <div><dt>Impact</dt><dd>~10,000 daily riders</dd></div>
+            </dl>
+
+            <div class="st-stack">
+              <div class="st-sub">Stack</div>
+              <div class="st-chips">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">pandas</span>
+                <span class="tech-chip">geopandas</span>
+                <span class="tech-chip">shapely</span>
+                <span class="tech-chip">Jupyter</span>
+                <span class="tech-chip">ArcGIS REST</span>
+                <span class="tech-chip">GTFS</span>
+                <span class="tech-chip">Canvas</span>
+              </div>
+            </div>
+
+            <div class="st-cta">
+              <a class="btn-st primary" href="https://haochenmiao.github.io/sound-transit-accessibility/web/2d/" target="_blank" rel="noopener">Open 2D atlas</a>
+              <a class="btn-st" href="https://haochenmiao.github.io/sound-transit-accessibility/web/3d/" target="_blank" rel="noopener">Open 3D section</a>
+              <a class="btn-st ghost" href="https://github.com/haochenmiao/sound-transit-accessibility" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </aside>
+
+          <!-- MAIN TABBED PANEL -->
+          <div class="st-main">
+            <nav class="st-tabs" role="tablist">
+              <button class="st-tab active" data-tab="overview" role="tab">Overview</button>
+              <button class="st-tab" data-tab="atlas-2d" role="tab">2D atlas</button>
+              <button class="st-tab" data-tab="section-3d" role="tab">3D section</button>
+              <button class="st-tab" data-tab="pipeline" role="tab">Pipeline</button>
+              <button class="st-tab" data-tab="schema" role="tab">Schema</button>
+              <button class="st-tab" data-tab="honesty" role="tab">Honesty</button>
+            </nav>
+
+            <div class="st-panel active" data-panel="overview">
+              <div class="st-built-for">
+                <span class="st-sub">Built for</span>
+                <span class="rider-chip">Wheelchair user</span>
+                <span class="rider-chip">Blind rider</span>
+                <span class="rider-chip">Mobility-impaired rider</span>
+              </div>
+
+              <div class="st-stat-grid">
+                <div class="st-stat">
+                  <div class="st-stat-n">63</div>
+                  <div class="st-stat-l">Pathways synthesized</div>
+                </div>
+                <div class="st-stat">
+                  <div class="st-stat-n">24</div>
+                  <div class="st-stat-l">Barriers flagged</div>
+                </div>
+                <div class="st-stat">
+                  <div class="st-stat-n">8</div>
+                  <div class="st-stat-l">ADAAG fields added</div>
+                </div>
+              </div>
+
+              <p class="st-severity">
+                <span class="sev sev-blocking">4</span> blocking
+                <span class="sev-sep">·</span>
+                <span class="sev sev-moderate">5</span> moderate
+                <span class="sev-sep">·</span>
+                <span class="sev sev-minor">15</span> minor
+              </p>
+
+              <section class="st-section">
+                <h2 class="st-h"><span class="st-num">01</span> The gap</h2>
+                <p>GTFS Pathways describes what connects to what inside a transit station — stairs here, elevator there. It does not describe whether those connections are usable. A wheelchair user cannot see from the feed whether stairs become a dead end. A blind rider cannot see whether the elevator announces its position.</p>
+              </section>
+
+              <section class="st-section">
+                <h2 class="st-h"><span class="st-num">02</span> The approach</h2>
+                <p>Pulled the live Sound Transit GTFS feed (<span class="mono">SC-Fall-2026.5</span>, <span class="mono">380</span> stops, <span class="mono">23</span> Link stations), fetched station footprint polygons and surface building roofs from the public ArcGIS REST services, synthesized <span class="mono">pathways.txt</span> where the feed lacked it, and enriched each pathway with eight ADAAG-anchored accessibility attributes. A Jupyter QA notebook replaced the original project's ArcGIS ModelBuilder chain and cut mapping time by ~<span class="mono">30%</span>.</p>
+              </section>
+
+              <section class="st-section">
+                <h2 class="st-h"><span class="st-num">03</span> The outcome</h2>
+                <p>Four audited Link stations (Capitol Hill, UW, U District, Roosevelt). <span class="mono">24</span> barriers surfaced — <span class="mono">4</span> blocking, <span class="mono">5</span> moderate, <span class="mono">15</span> minor. The output GeoJSON drops into the Taskar Center's AccessMap routing tool with no schema change.</p>
+              </section>
+            </div>
+            <div class="st-panel" data-panel="atlas-2d">
+              <p>The 2D atlas opens on the full Link system — 23 stations with the real line geometry. The four audited stations show in red; click any to zoom into its footprint, surface buildings, and synthesized pathways color-coded by barrier severity.</p>
+              <div class="st-iframe-wrap">
+                <iframe data-src="https://haochenmiao.github.io/sound-transit-accessibility/web/2d/" loading="lazy" title="2D Link Accessibility Atlas"></iframe>
+              </div>
+              <a class="st-fullscreen-link" href="https://haochenmiao.github.io/sound-transit-accessibility/web/2d/" target="_blank" rel="noopener">Open full-screen ↗</a>
+            </div>
+            <div class="st-panel" data-panel="section-3d">
+              <p>The 3D section extrudes each station's real ArcGIS footprint through Street, Mezzanine, and Platform levels. Pathways rise and fall between levels so a reader can see the vertical journey a rider actually makes. Rotate, pan, and switch stations from the top-right.</p>
+              <div class="st-iframe-wrap">
+                <iframe data-src="https://haochenmiao.github.io/sound-transit-accessibility/web/3d/" loading="lazy" title="3D Link Station Section"></iframe>
+              </div>
+              <a class="st-fullscreen-link" href="https://haochenmiao.github.io/sound-transit-accessibility/web/3d/" target="_blank" rel="noopener">Open full-screen ↗</a>
+            </div>
+            <div class="st-panel" data-panel="pipeline">
+              <svg class="st-pipeline-svg" viewBox="0 0 1200 220" width="100%" role="img" aria-label="Pipeline: GTFS feed and ArcGIS REST feed into pathway synthesis, ADAAG enrichment, severity classification, QA notebook, GeoJSON output">
+                <style>
+                  .pipe-box { fill: #f6f4ef; stroke: #0d0f12; stroke-width: 1; }
+                  .pipe-arrow { stroke: #0d0f12; stroke-width: 1; fill: none; }
+                  .pipe-head { fill: #0d0f12; stroke: none; }
+                  .pipe-label { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; fill: #0d0f12; }
+                  @media (prefers-color-scheme: dark) {
+                    .pipe-box { fill: #0d0f12; stroke: #f1efe8; }
+                    .pipe-arrow { stroke: #f1efe8; }
+                    .pipe-head { fill: #f1efe8; }
+                    .pipe-label { fill: #f1efe8; }
+                  }
+                </style>
+
+                <!-- 7 boxes, 155 wide, 70 tall, 15px gap, centered vertically on y=110 -->
+                <g>
+                  <rect class="pipe-box" x="10" y="75" width="155" height="70"/>
+                  <text class="pipe-label" x="87.5" y="105" text-anchor="middle">ST GTFS feed</text>
+                  <text class="pipe-label" x="87.5" y="123" text-anchor="middle" opacity="0.6">SC-Fall-2026.5</text>
+                </g>
+                <g>
+                  <rect class="pipe-box" x="180" y="75" width="155" height="70"/>
+                  <text class="pipe-label" x="257.5" y="100" text-anchor="middle">ArcGIS REST</text>
+                  <text class="pipe-label" x="257.5" y="118" text-anchor="middle" opacity="0.6">stations + buildings</text>
+                </g>
+                <g>
+                  <rect class="pipe-box" x="350" y="75" width="155" height="70"/>
+                  <text class="pipe-label" x="427.5" y="100" text-anchor="middle">Synthesize</text>
+                  <text class="pipe-label" x="427.5" y="118" text-anchor="middle">pathways.txt</text>
+                </g>
+                <g>
+                  <rect class="pipe-box" x="520" y="75" width="155" height="70"/>
+                  <text class="pipe-label" x="597.5" y="100" text-anchor="middle">Enrich</text>
+                  <text class="pipe-label" x="597.5" y="118" text-anchor="middle" opacity="0.6">8 ADAAG fields</text>
+                </g>
+                <g>
+                  <rect class="pipe-box" x="690" y="75" width="155" height="70"/>
+                  <text class="pipe-label" x="767.5" y="100" text-anchor="middle">Severity 0–3</text>
+                  <text class="pipe-label" x="767.5" y="118" text-anchor="middle" opacity="0.6">classifier</text>
+                </g>
+                <g>
+                  <rect class="pipe-box" x="860" y="75" width="155" height="70"/>
+                  <text class="pipe-label" x="937.5" y="100" text-anchor="middle">Jupyter QA</text>
+                  <text class="pipe-label" x="937.5" y="118" text-anchor="middle">notebook</text>
+                </g>
+                <g>
+                  <rect class="pipe-box" x="1030" y="75" width="160" height="70"/>
+                  <text class="pipe-label" x="1110" y="100" text-anchor="middle">GeoJSON output</text>
+                  <text class="pipe-label" x="1110" y="118" text-anchor="middle" opacity="0.6">→ 2D + 3D viewers</text>
+                </g>
+
+                <!-- Arrows between boxes -->
+                <g>
+                  <line class="pipe-arrow" x1="165" y1="110" x2="175" y2="110"/>
+                  <polygon class="pipe-head" points="175,105 180,110 175,115"/>
+                  <line class="pipe-arrow" x1="335" y1="110" x2="345" y2="110"/>
+                  <polygon class="pipe-head" points="345,105 350,110 345,115"/>
+                  <line class="pipe-arrow" x1="505" y1="110" x2="515" y2="110"/>
+                  <polygon class="pipe-head" points="515,105 520,110 515,115"/>
+                  <line class="pipe-arrow" x1="675" y1="110" x2="685" y2="110"/>
+                  <polygon class="pipe-head" points="685,105 690,110 685,115"/>
+                  <line class="pipe-arrow" x1="845" y1="110" x2="855" y2="110"/>
+                  <polygon class="pipe-head" points="855,105 860,110 855,115"/>
+                  <line class="pipe-arrow" x1="1015" y1="110" x2="1025" y2="110"/>
+                  <polygon class="pipe-head" points="1025,105 1030,110 1025,115"/>
+                </g>
+              </svg>
+
+              <section class="st-section">
+                <h3 class="st-h3">Data sources</h3>
+                <p>Sound Transit GTFS feed (<span class="mono">SC-Fall-2026.5</span>, <span class="mono">380</span> stops), Sound Transit ArcGIS REST services <span class="mono">STArtMap/MapServer</span> and <span class="mono">STTransitService/MapServer</span>, and OpenStreetMap Overpass as an optional supplement. Everything the pipeline reads is public.</p>
+              </section>
+
+              <section class="st-section">
+                <h3 class="st-h3">Methods</h3>
+                <p>Three stages: <strong>fetch</strong> (live GTFS + ArcGIS geometry), <strong>synthesize</strong> (generate <span class="mono">pathways.txt</span> entries where ST does not currently ship them), <strong>enrich</strong> (classify barrier severity from field-rule heuristics in <span class="mono">src/enrich_gtfs.py:classify_severity</span>). The QA notebook validates CRS, checks topology, flags duplicates, scores completeness, rolls up severity, and exports a QA report.</p>
+              </section>
+
+              <section class="st-section">
+                <h3 class="st-h3">Why it matters for a transit agency</h3>
+                <p>Transit agencies and civic-tech teams care about pipelines more than they care about maps. This one accepts a <span class="mono">data/raw/field_audit.csv</span> override keyed by <span class="mono">pathway_id</span> — the day a real audit CSV lands, the pipeline swaps synthetic for real with no code change.</p>
+              </section>
+            </div>
+            <div class="st-panel" data-panel="schema">
+              <p class="st-schema-lead">GTFS Pathways gives <span class="mono">stair_count</span>, <span class="mono">max_slope</span>, <span class="mono">length</span>, <span class="mono">width</span>. That is not enough. These eight attributes extend it:</p>
+
+              <table class="st-schema-table">
+                <thead>
+                  <tr>
+                    <th class="st-col-field">Field</th>
+                    <th class="st-col-why">Why it matters</th>
+                    <th class="st-col-adaag">ADAAG</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="st-col-field">has_handrail</td>
+                    <td class="st-col-why">Stairs with 4+ risers need handrails on both sides</td>
+                    <td class="st-col-adaag">§505</td>
+                  </tr>
+                  <tr>
+                    <td class="st-col-field">audible_signals</td>
+                    <td class="st-col-why">Elevators must announce position</td>
+                    <td class="st-col-adaag">§407.4</td>
+                  </tr>
+                  <tr>
+                    <td class="st-col-field">tactile_paving</td>
+                    <td class="st-col-why">Platform edges need detectable warnings</td>
+                    <td class="st-col-adaag">§705</td>
+                  </tr>
+                  <tr>
+                    <td class="st-col-field">braille_signage</td>
+                    <td class="st-col-why">Permanent signs need braille</td>
+                    <td class="st-col-adaag">§703.3</td>
+                  </tr>
+                  <tr>
+                    <td class="st-col-field">audible_wayfinding</td>
+                    <td class="st-col-why">Entrances with voice announcement systems</td>
+                    <td class="st-col-adaag">§707</td>
+                  </tr>
+                  <tr>
+                    <td class="st-col-field">lighting_quality</td>
+                    <td class="st-col-why">Field-rated adequacy for low-vision riders (1–5)</td>
+                    <td class="st-col-adaag">§215</td>
+                  </tr>
+                  <tr>
+                    <td class="st-col-field">tactile_warning_strip</td>
+                    <td class="st-col-why">Detectable warning strip at platform edge</td>
+                    <td class="st-col-adaag">§705.1</td>
+                  </tr>
+                  <tr>
+                    <td class="st-col-field">compliance_adaag</td>
+                    <td class="st-col-why">Rolled-up pass/fail across the above</td>
+                    <td class="st-col-adaag">—</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="st-schema-note">Severity <span class="mono">0–3</span> is derived from these fields by rule set in <span class="mono">src/enrich_gtfs.py:classify_severity</span>. <span class="mono">0</span> = none, <span class="mono">1</span> = minor, <span class="mono">2</span> = moderate, <span class="mono">3</span> = blocking.</p>
+            </div>
+            <div class="st-panel" data-panel="honesty">
+              <h3 class="st-h3">Real vs. illustrative</h3>
+
+              <div class="st-honesty-grid">
+                <div class="st-honesty-col">
+                  <h4 class="st-honesty-head">Authentic</h4>
+                  <ul class="st-honesty-list">
+                    <li>Station coordinates (live GTFS)</li>
+                    <li>Link line geometry (ST ArcGIS)</li>
+                    <li>Station footprint polygons (ST ArcGIS)</li>
+                    <li>Surface building roofs (ST ArcGIS)</li>
+                    <li>Entrance counts and names</li>
+                    <li>Feed version <span class="mono">SC-Fall-2026.5</span></li>
+                  </ul>
+                </div>
+                <div class="st-honesty-col">
+                  <h4 class="st-honesty-head">Synthesized · deterministic, seeded</h4>
+                  <ul class="st-honesty-list">
+                    <li><span class="mono">has_handrail</span> values</li>
+                    <li><span class="mono">audible_signals</span> values</li>
+                    <li><span class="mono">tactile_paving</span> values</li>
+                    <li><span class="mono">braille_signage</span> values</li>
+                    <li><span class="mono">lighting_quality</span> ratings</li>
+                    <li>barrier severity scores</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="st-honesty-note">The original project (CSE 495, Sound Transit × Taskar Center, Sept 2023 – Mar 2024) collected real field audit data at three stations under an NDA that keeps the specific values out of a public repo. This replica preserves the pipeline, the schema, and the ADAAG anchoring verbatim, and substitutes deterministic synthetic values keyed by <span class="mono">pathway_id</span>. The pipeline accepts a <span class="mono">data/raw/field_audit.csv</span> override — if real values land, synthetic drops out automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main><!-- End #main -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

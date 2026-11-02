@@ -176,17 +176,38 @@
         layoutMode: 'fitRows'
       });
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+      let roleFilter = '*';
+      let typeFilter = '*';
 
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+      // Role and type filters combine with AND: ".role-ds" + ".type-dashboard" -> ".role-ds.type-dashboard"
+      const combinedFilter = () => {
+        if (roleFilter === '*') return typeFilter;
+        if (typeFilter === '*') return roleFilter;
+        return roleFilter + typeFilter;
+      };
+
+      const setActive = (row, item) => {
+        select(row + ' li', true).forEach(function(el) {
           el.classList.remove('filter-active');
         });
-        this.classList.add('filter-active');
+        item.classList.add('filter-active');
+      };
 
+      on('click', '#portfolio-roles li', function(e) {
+        e.preventDefault();
+        setActive('#portfolio-roles', this);
+        roleFilter = this.getAttribute('data-filter');
         portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+          filter: combinedFilter()
+        });
+      }, true);
+
+      on('click', '#portfolio-types li', function(e) {
+        e.preventDefault();
+        setActive('#portfolio-types', this);
+        typeFilter = this.getAttribute('data-filter');
+        portfolioIsotope.arrange({
+          filter: combinedFilter()
         });
       }, true);
     }
@@ -194,6 +215,79 @@
   });
 
 
+
+  /**
+   * Portfolio card slideshows: cycle .slide/.dot every 3.2s, staggered start, pause on hover
+   */
+  window.addEventListener('load', () => {
+    select('.portfolio-slides', true).forEach((deck) => {
+      let slides = deck.querySelectorAll('.slide');
+      let dots = deck.querySelectorAll('.dot');
+      if (slides.length < 2) return;
+
+      let current = 0;
+      let paused = false;
+      let card = deck.closest('.portfolio-wrap') || deck;
+      card.addEventListener('mouseenter', () => paused = true);
+      card.addEventListener('mouseleave', () => paused = false);
+
+      const advance = () => {
+        if (paused) return;
+        slides[current].classList.remove('active');
+        if (dots[current]) dots[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+        if (dots[current]) dots[current].classList.add('active');
+      };
+
+      setTimeout(() => setInterval(advance, 3200), Math.random() * 2000);
+    });
+  });
+
+  /**
+   * Portfolio-details tabs: scoped to .portfolio-details, with deep-link + lazy iframes
+   */
+  window.addEventListener('load', () => {
+    let detail = select('.portfolio-details');
+    if (!detail) return;
+    let tabs = detail.querySelectorAll('.st-tab');
+    let panels = detail.querySelectorAll('.st-panel');
+    if (!tabs.length) return;
+
+    const activate = (name, updateHash) => {
+      let panel = detail.querySelector('.st-panel[data-panel="' + name + '"]');
+      let tab = detail.querySelector('.st-tab[data-tab="' + name + '"]');
+      if (!panel || !tab) return false;
+
+      tabs.forEach((el) => el.classList.remove('active'));
+      panels.forEach((el) => el.classList.remove('active'));
+      tab.classList.add('active');
+      panel.classList.add('active');
+
+      // Lazy-load iframes the first time their tab is opened
+      panel.querySelectorAll('iframe[data-src]').forEach((frame) => {
+        frame.src = frame.getAttribute('data-src');
+        frame.removeAttribute('data-src');
+      });
+
+      if (updateHash) {
+        history.replaceState(null, '', '#' + name);
+      }
+      return true;
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        activate(tab.getAttribute('data-tab'), true);
+      });
+    });
+
+    // Deep-link: activate the tab named by the hash on load, if any
+    if (location.hash) {
+      activate(location.hash.slice(1), false);
+    }
+  });
 
   /**
    * Portfolio slider
