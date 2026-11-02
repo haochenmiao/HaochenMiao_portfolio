@@ -290,6 +290,69 @@
   });
 
   /**
+   * Florida Flood (Cape Coral) detail: 2D/3D view switch with lazy iframe loading
+   */
+  window.addEventListener('load', () => {
+    let detail = select('.ff-detail');
+    if (!detail) return;
+
+    let shells = {
+      '2d': detail.querySelector('.ff-iframe-shell[data-view="2d"]'),
+      '3d': detail.querySelector('.ff-iframe-shell[data-view="3d"]')
+    };
+    if (!shells['2d'] || !shells['3d']) return;
+
+    let urls = {
+      '2d': shells['2d'].querySelector('iframe').getAttribute('data-src'),
+      '3d': shells['3d'].querySelector('iframe').getAttribute('data-src')
+    };
+
+    // Guard: refuse to wire up anything if the live URLs are still placeholders
+    let placeholder = (u) => !u || /REPLACE_WITH_LIVE/.test(u);
+    if (placeholder(urls['2d']) || placeholder(urls['3d'])) {
+      console.warn('ff-detail: live URL(s) not filled in — disabling view switch and live links');
+      detail.querySelectorAll('.ff-view, .btn-ff[data-live]').forEach((el) => {
+        el.setAttribute('disabled', '');
+        if (el.tagName === 'A') { el.style.pointerEvents = 'none'; el.style.opacity = '0.5'; }
+      });
+      return;
+    }
+
+    // Keep the "Open live map" buttons pointed at the single source of truth
+    detail.querySelectorAll('.btn-ff[data-live]').forEach((btn) => {
+      let view = btn.getAttribute('data-live');
+      if (urls[view]) btn.setAttribute('href', urls[view]);
+    });
+
+    // Load the 2D iframe straight away so it's warm when the user looks at the map
+    const loadInto = (shell) => {
+      let frame = shell.querySelector('iframe');
+      if (frame && !frame.getAttribute('src')) {
+        frame.setAttribute('src', frame.getAttribute('data-src'));
+      }
+    };
+    loadInto(shells['2d']);
+
+    detail.querySelectorAll('.ff-view').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let view = btn.getAttribute('data-view');
+        if (!shells[view]) return;
+
+        detail.querySelectorAll('.ff-view').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        Object.keys(shells).forEach((k) => {
+          if (k === view) shells[k].removeAttribute('hidden');
+          else shells[k].setAttribute('hidden', '');
+        });
+
+        loadInto(shells[view]);
+      });
+    });
+  });
+
+  /**
    * Portfolio slider
    */
   document.addEventListener('DOMContentLoaded', function () {
