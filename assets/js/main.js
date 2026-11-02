@@ -193,6 +193,30 @@
 
   });
 
+
+
+  /**
+   * Portfolio slider
+   */
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.portfolio-slider', {
+      loop: true, // Enable infinite looping
+      autoplay: {
+        delay: 3000, // Auto-slide every 3 seconds
+        disableOnInteraction: false, // Keep autoplay after interaction
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+
+
   /**
    * Initiate portfolio lightbox 
    */
