@@ -35,6 +35,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" media="screen" href="./assets/css/style.css">
 
+  <!-- Pre-paint deep-link handler: if the URL has a section hash (e.g. #portfolio),
+       collapse the home hero into the compact top bar and reveal the target section
+       immediately. If sessionStorage also remembers a portfolio card the visitor
+       came from, hide the page until we've scrolled to that card so there's no
+       top-of-gallery flash. -->
+  <script>
+    (function () {
+      var h = window.location.hash;
+      if (!h || h.length < 2 || h === '#header') return;
+      document.documentElement.classList.add('deep-linked');
+      var s = document.createElement('style');
+      s.textContent = 'section' + h + '{top:100px!important;bottom:auto!important;opacity:1!important;padding-bottom:45px!important;z-index:3!important}' +
+                      '@media(max-width:768px){section' + h + '{top:80px!important}}';
+      document.head.appendChild(s);
+
+      // If this is a return-to-portfolio with a specific card, keep the body
+      // visibility hidden until the scroll is in place. The class is removed by
+      // the body-end script after it scrolls, or by onload as a safety net.
+      try {
+        if (h === '#portfolio' && sessionStorage.getItem('portfolioReturn')) {
+          document.documentElement.classList.add('return-pending');
+          try { history.scrollRestoration = 'manual'; } catch (_) {}
+        }
+      } catch (_) {}
+    })();
+  </script>
+  <style>html.return-pending { visibility: hidden; }</style>
+
   <!-- =======================================================
   * Template Name: Personal
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -864,6 +892,56 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Return-to-card scroll. The <head> script already hid the body (html.return-pending).
+       This script waits for all images in the portfolio section to load so card
+       heights are stable, then scrolls to the stored card and reveals the page.
+       The result is a single paint, directly at the card's position. -->
+  <script>
+    (function () {
+      if (window.location.hash !== '#portfolio') return;
+      var href;
+      try { href = sessionStorage.getItem('portfolioReturn'); } catch (_) {}
+      if (!href) {
+        document.documentElement.classList.remove('return-pending');
+        return;
+      }
+      try { sessionStorage.removeItem('portfolioReturn'); } catch (_) {}
+      window.__portfolioScrollHandled = true;
+
+      var findCard = function () {
+        var wraps = document.querySelectorAll('.portfolio-wrap');
+        for (var i = 0; i < wraps.length; i++) {
+          if (wraps[i].querySelector('a[href="' + href + '"]')) return wraps[i];
+        }
+        return null;
+      };
+
+      var scrollToCard = function () {
+        var card = findCard();
+        if (!card) return;
+        // scrollIntoView proved reliable on this page's layout; scrollTo doesn't
+        // take effect at parse time because section#portfolio is position:absolute.
+        card.scrollIntoView({ block: 'center', behavior: 'auto' });
+      };
+
+      var reveal = function () { document.documentElement.classList.remove('return-pending'); };
+
+      // Scroll on window.load so section images (which drive card heights) are in,
+      // then reveal the page in the next frame. We double-scroll to catch any late
+      // layout shift from the particles canvas or font swap.
+      window.addEventListener('load', function () {
+        scrollToCard();
+        requestAnimationFrame(function () {
+          scrollToCard();
+          reveal();
+        });
+      });
+
+      // Safety net: never leave the page hidden for more than 2s even if something fails.
+      setTimeout(reveal, 2000);
+    })();
+  </script>
 
 </body>
 

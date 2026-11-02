@@ -233,9 +233,30 @@
       wrap.addEventListener('click', (e) => {
         // Let real inner links (e.g. a slide-dot anchor) do their own thing
         if (e.target.closest('a, button, input')) return;
+        // Remember which card the user clicked so the X-button return can scroll back to it
+        try { sessionStorage.setItem('portfolioReturn', href); } catch (_) {}
         window.location.href = href;
       });
     });
+  });
+
+  /**
+   * On return from a detail page (via the X button): if the URL points at #portfolio
+   * and sessionStorage remembers which card we came from, scroll that card into view
+   * instead of landing at the top of the gallery.
+   */
+  window.addEventListener('load', () => {
+    // The pre-paint inline script in index.html usually handles this synchronously.
+    // Only fall back here if the inline path didn't run (e.g. storage access failed).
+    if (window.__portfolioScrollHandled) return;
+    if (window.location.hash !== '#portfolio') return;
+    let returnHref;
+    try { returnHref = sessionStorage.getItem('portfolioReturn'); } catch (_) {}
+    if (!returnHref) return;
+    try { sessionStorage.removeItem('portfolioReturn'); } catch (_) {}
+    let card = document.querySelector('.portfolio-wrap[data-href="' + returnHref + '"]');
+    if (!card) return;
+    card.scrollIntoView({ block: 'center', behavior: 'auto' });
   });
 
   /**
