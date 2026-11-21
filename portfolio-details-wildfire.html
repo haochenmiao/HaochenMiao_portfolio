@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>US Wildfires 1985–2014 - Haochen Miao</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+    <div id="portfolio-details" class="portfolio-details wf-detail">
+      <div class="container">
+
+        <!-- HEADER -->
+        <header class="wf-head">
+          <div class="wf-head-left">
+            <div class="wf-badges">
+              <span class="role-badge role-badge-GIS">GIS</span>
+              <span class="role-badge role-badge-DE">DE</span>
+              <span class="wf-nb-chip">Notebook</span>
+            </div>
+            <h1 class="wf-title">Where US wildfires went, 1985–2014</h1>
+            <p class="wf-pitch">Two 15-year windows on the same map — aggregated by state, reprojected to Albers Equal Area, colored by fire count. A two-notebook pipeline from raw shapefile to published figure.</p>
+          </div>
+          <div class="wf-head-right">
+            <a class="btn-wf primary" href="https://github.com/haochenmiao/WildfireGeospatialAnalysis/blob/main/WildfireAnalysis_1985_1999_2000_2014.ipynb" target="_blank" rel="noopener">Analysis notebook</a>
+            <a class="btn-wf" href="https://github.com/haochenmiao/WildfireGeospatialAnalysis/blob/main/WildfireDataPreparation_Conversion.ipynb" target="_blank" rel="noopener">Prep notebook</a>
+            <a class="btn-wf ghost" href="https://github.com/haochenmiao/WildfireGeospatialAnalysis" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </header>
+
+        <!-- SPLIT HERO -->
+        <!-- Values from docs/wildfire-summary.json (MTBS perimeter database, CONUS 49 states) -->
+        <section class="wf-split">
+          <div class="wf-period">
+            <div class="wf-period-head">
+              <span class="wf-period-label">1985 – 1999</span>
+              <span class="wf-period-total">6,633 fires</span>
+            </div>
+            <img class="wf-choro" src="assets/img/portfolio/wildfire-choro-1985.png" alt="US choropleth of wildfire counts by state, 1985–1999">
+            <div class="wf-period-foot">
+              Top 3 · <span class="mono">Florida · California · Idaho</span>
+            </div>
+          </div>
+
+          <div class="wf-period">
+            <div class="wf-period-head">
+              <span class="wf-period-label">2000 – 2014</span>
+              <span class="wf-period-total">13,223 fires</span>
+            </div>
+            <img class="wf-choro" src="assets/img/portfolio/wildfire-choro-2000.png" alt="US choropleth of wildfire counts by state, 2000–2014">
+            <div class="wf-period-foot">
+              Top 3 · <span class="mono">Florida · Texas · California</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- HEADLINE CALLOUT -->
+        <aside class="wf-headline">
+          <div class="wf-headline-k">The headline</div>
+          <div class="wf-headline-t">
+            State-aggregated wildfire counts rose
+            <span class="wf-pct">99.4%</span>
+            between the two periods.
+          </div>
+          <div class="wf-headline-b">
+            24 states more than doubled their count; 2 states saw their count fall.
+            The shift is concentrated in the regions the two maps above color most differently.
+          </div>
+        </aside>
+
+        <!-- DENSITY ROW -->
+        <section class="wf-section" id="wf-density">
+          <h2 class="wf-h2">Kernel density surfaces</h2>
+          <p class="wf-lede">The choropleths above count fires by state. These density surfaces smooth the point data continuously — the hot spots shift across the two periods, and the comparison is easier to feel than count.</p>
+
+          <div class="wf-density-row">
+            <figure class="wf-density-fig">
+              <img src="assets/img/portfolio/wildfire-density-1985.png" alt="Kernel density of US wildfire occurrence, 1985–1999">
+              <figcaption>1985 – 1999 · kernel density</figcaption>
+            </figure>
+            <figure class="wf-density-fig">
+              <img src="assets/img/portfolio/wildfire-density-2000.png" alt="Kernel density of US wildfire occurrence, 2000–2014">
+              <figcaption>2000 – 2014 · kernel density</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- METHODS -->
+        <section class="wf-section" id="wf-methods">
+          <h2 class="wf-h2">How the pipeline works</h2>
+          <div class="wf-two-col">
+            <div>
+              <h3 class="wf-h3">Why Albers Equal Area</h3>
+              <p class="wf-p">The raw fire data ships in EPSG:4326 (lat/lon degrees). Counting points in degrees distorts area — a one-degree box in Montana covers far more ground than one in Florida. The pipeline reprojects everything to EPSG:5070 (NAD83 / Conus Albers Equal Area) so states are compared at their true geographic weight.</p>
+              <div class="wf-code">
+gdf = gdf.to_crs("EPSG:5070")
+              </div>
+            </div>
+            <div>
+              <h3 class="wf-h3">Why a spatial join</h3>
+              <p class="wf-p">Fires arrive as point coordinates. States arrive as polygons. To count fires per state the pipeline uses a within-predicate spatial join (<span class="mono">geopandas.sjoin</span>), then groups by period and state.</p>
+              <div class="wf-code">
+joined = gpd.sjoin(
+    fires, states,
+    how="left", predicate="within"
+)
+by_state = (
+    joined.groupby(["period", "STUSPS"])
+          .size()
+          .unstack(fill_value=0)
+)
+              </div>
+            </div>
+          </div>
+          <p class="wf-footnote">Both snippets are from the analysis notebook, lightly trimmed. Open the live notebook for the full cell.</p>
+        </section>
+
+        <!-- DATA SOURCES -->
+        <section class="wf-section" id="wf-data">
+          <h2 class="wf-h2">Data sources</h2>
+          <p class="wf-lede">Two public datasets drive the analysis — US wildfire occurrence records split into two 15-year windows, plus a state boundary file for the spatial join.</p>
+
+          <table class="wf-source-table">
+            <thead>
+              <tr><th>Layer</th><th>Source</th><th>Format</th><th>Role</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Wildfire occurrences 1985–1999</td><td>MTBS Fire Occurrence Database (mtbs_FODpoints_DD)</td><td>Shapefile (point)</td><td>Fire counts, period 1</td></tr>
+              <tr><td>Wildfire occurrences 2000–2014</td><td>MTBS Fire Occurrence Database (mtbs_FODpoints_DD), second window</td><td>Shapefile (point)</td><td>Fire counts, period 2</td></tr>
+              <tr><td>State boundaries</td><td>Natural Earth 1:110m admin_1 states/provinces</td><td>Shapefile (polygon)</td><td>Spatial join unit</td></tr>
+            </tbody>
+          </table>
+
+          <p class="wf-footnote">Sources match the actual read_file paths in the analysis notebook — fires from <span class="mono">Data/mtbs_FODpoints_DD/</span> (MTBS Monitoring Trends in Burn Severity), states from <span class="mono">Data/110m_cultural/ne_110m_admin_1_states_provinces.shp</span>.</p>
+        </section>
+
+        <!-- THE TWO NOTEBOOKS -->
+        <section class="wf-section" id="wf-notebooks">
+          <h2 class="wf-h2">The two notebooks</h2>
+          <p class="wf-lede">This project is pure Jupyter — no web app. These are the two files; everything else is scaffolding.</p>
+
+          <div class="wf-nb-grid">
+            <a class="wf-nb-card" href="https://github.com/haochenmiao/WildfireGeospatialAnalysis/blob/main/WildfireDataPreparation_Conversion.ipynb" target="_blank" rel="noopener">
+              <div class="wf-nb-k">01 · PREP</div>
+              <div class="wf-nb-t">WildfireDataPreparation_Conversion.ipynb</div>
+              <div class="wf-nb-b">Downloads the raw files, converts shapefile ⇄ GeoJSON, normalizes column names and writes a clean working copy for the analysis notebook to consume.</div>
+              <div class="wf-nb-stack">GeoPandas · Fiona · Rasterio · GDAL</div>
+              <div class="wf-nb-link">Open on GitHub ↗</div>
+            </a>
+            <a class="wf-nb-card" href="https://github.com/haochenmiao/WildfireGeospatialAnalysis/blob/main/WildfireAnalysis_1985_1999_2000_2014.ipynb" target="_blank" rel="noopener">
+              <div class="wf-nb-k">02 · ANALYSIS</div>
+              <div class="wf-nb-t">WildfireAnalysis_1985_1999_2000_2014.ipynb</div>
+              <div class="wf-nb-b">Reprojects to Albers Equal Area, spatially joins fire points to state polygons, groups by period and state, renders the choropleths and kernel-density surfaces shown above.</div>
+              <div class="wf-nb-stack">GeoPandas · Shapely · pyproj · Matplotlib</div>
+              <div class="wf-nb-link">Open on GitHub ↗</div>
+            </a>
+          </div>
+
+          <p class="wf-footnote">
+            Prefer a rendered view? Open either file through
+            <a href="https://nbviewer.org/github/haochenmiao/WildfireGeospatialAnalysis/blob/main/WildfireAnalysis_1985_1999_2000_2014.ipynb" target="_blank" rel="noopener">nbviewer</a>.
+          </p>
+        </section>
+
+        <!-- HONEST LIMITS -->
+        <section class="wf-section" id="wf-honesty">
+          <h2 class="wf-h2">Honest limits</h2>
+          <ul class="wf-limits">
+            <li><strong>Occurrence count, not severity.</strong> A 100-acre fire and a one-acre fire count the same. The analysis measures how many fires started, not how much burned.</li>
+            <li><strong>The dataset ends at 2014.</strong> The 2017–present megafire era (Camp Fire, Paradise; 2020 West Coast; 2023 Maui; recurring Dixie / Caldor) is not represented. A refresh on the next FPA-FOD release would reset the headline.</li>
+            <li><strong>Descriptive, not causal.</strong> The maps show where and when fires happened; they do not attribute cause to climate, fuel loading, ignition source, or policy.</li>
+            <li><strong>State is a coarse unit.</strong> California is a single polygon — a tract-level or ecoregion-level analysis would reveal patterns this view hides.</li>
+            <li><strong>CRS caveat.</strong> EPSG:5070 is correct for the continental US; Alaska and Hawaii, if present in the source, need a different projection and were excluded from the analysis.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main><!-- End #main -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

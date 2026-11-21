@@ -1,0 +1,21 @@
+{
+  "fires_1985_1999": 6633,
+  "fires_2000_2014": 13223,
+  "pct_change": 99.4,
+  "top3_1985_1999": [
+    "Florida",
+    "California",
+    "Idaho"
+  ],
+  "top3_2000_2014": [
+    "Florida",
+    "Texas",
+    "California"
+  ],
+  "states_doubled": 24,
+  "states_decreased": 2,
+  "n_states_considered": 49,
+  "period_a_label": "1985\u20131999",
+  "period_b_label": "2000\u20132014",
+  "source": "MTBS perimeter database (mtbs_perims_DD.shp), filtered by ig_date year, spatially joined to Natural Earth 1:110m US states in EPSG:5070"
+}

@@ -1956,3 +1956,103 @@
      .wa-detail .wa-three-col { grid-template-columns: 1fr; }
      .wa-detail .wa-pages-grid { grid-template-columns: 1fr; }
    }
+
+   /* ---- Wildfire Geospatial Analysis detail page: Option 1 before/after split hero ---- */
+
+   .wf-detail { background: #1a1410; color: #eadfd0; padding: 60px 0 80px; font-family: 'Space Grotesk', sans-serif; }
+   .wf-detail .container { max-width: 1200px; }
+
+   /* Header */
+   .wf-detail .wf-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 28px; border-bottom: 1px solid #3a2e22; padding-bottom: 20px; }
+   .wf-detail .wf-head-right { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+   .wf-detail .wf-badges { display: flex; gap: 6px; margin-bottom: 6px; align-items: center; }
+   .wf-detail .wf-nb-chip { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 8px; border: 1px solid #f59e0b; color: #f59e0b; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; }
+   /* !important beats the homepage's global `h1 { font-size: 5rem !important }` */
+   .wf-detail .wf-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px !important; font-weight: 500; color: #fff; margin: 0 0 6px; letter-spacing: -0.01em; line-height: 1.2; }
+   .wf-detail .wf-pitch { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #d4c7b5; max-width: 620px; margin: 0; line-height: 1.55; }
+
+   /* Buttons */
+   .wf-detail .btn-wf { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 13px; padding: 9px 16px; border: 1px solid #3a2e22; color: #fff; background: transparent; text-decoration: none; border-radius: 3px; transition: all 0.15s; }
+   .wf-detail .btn-wf.primary { background: #ea580c; border-color: #ea580c; }
+   .wf-detail .btn-wf.ghost { color: #d4c7b5; }
+   .wf-detail .btn-wf:hover { background: #241b14; }
+   .wf-detail .btn-wf.primary:hover { background: #f97316; border-color: #f97316; }
+
+   /* Split hero */
+   .wf-detail .wf-split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+   .wf-detail .wf-period { background: #241b14; border-radius: 3px; padding: 14px; min-width: 0; }
+   .wf-detail .wf-period-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+   .wf-detail .wf-period-label { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff; letter-spacing: 0.08em; font-weight: 500; }
+   .wf-detail .wf-period-total { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #f59e0b; }
+   .wf-detail .wf-choro { width: 100%; display: block; border: 0.5px solid #3a2e22; border-radius: 2px; background: #1a1410; }
+   .wf-detail .wf-period-foot { margin-top: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #d4c7b5; }
+   .wf-detail .wf-period-foot .mono { font-family: 'JetBrains Mono', monospace; color: #fff; letter-spacing: 0.04em; }
+
+   /* Headline callout */
+   .wf-detail .wf-headline { background: rgba(220, 38, 38, 0.08); border-left: 3px solid #dc2626; padding: 16px 20px; border-radius: 3px; margin-bottom: 44px; }
+   .wf-detail .wf-headline-k { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+   .wf-detail .wf-headline-t { font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; font-weight: 500; line-height: 1.4; }
+   .wf-detail .wf-pct { font-family: 'JetBrains Mono', monospace; color: #ea580c; font-size: 26px; padding: 0 4px; }
+   .wf-detail .wf-headline-b { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #d4c7b5; line-height: 1.6; margin-top: 8px; }
+
+   /* Sections */
+   .wf-detail .wf-section { margin-bottom: 44px; }
+   .wf-detail .wf-h2 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; font-weight: 500; margin: 0 0 14px; }
+   .wf-detail .wf-h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #fff; font-weight: 500; margin: 0 0 8px; }
+   .wf-detail .wf-p,
+   .wf-detail .wf-lede { font-family: 'Space Grotesk', sans-serif; color: #d4c7b5; font-size: 14px; line-height: 1.65; margin: 0 0 10px; }
+   .wf-detail .wf-footnote { color: #8b7d6a; font-size: 12px; font-family: 'JetBrains Mono', monospace; margin-top: 10px; line-height: 1.5; }
+   .wf-detail .wf-footnote a { color: #f59e0b; text-decoration: none; }
+   .wf-detail .wf-footnote a:hover { text-decoration: underline; }
+   .wf-detail .wf-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+   .wf-detail .mono { font-family: 'JetBrains Mono', monospace; }
+
+   /* Density row */
+   .wf-detail .wf-density-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+   .wf-detail .wf-density-fig { margin: 0; min-width: 0; }
+   .wf-detail .wf-density-fig img { width: 100%; display: block; border: 0.5px solid #3a2e22; border-radius: 2px; background: #241b14; }
+   .wf-detail .wf-density-fig figcaption { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8b7d6a; margin-top: 6px; }
+
+   /* Code snippet card */
+   .wf-detail .wf-code { background: #0f0b08; border-left: 3px solid #ea580c; border-radius: 2px; padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #d4c7b5; line-height: 1.6; white-space: pre; overflow-x: auto; margin-top: 10px; }
+
+   /* Source table */
+   .wf-detail .wf-source-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+   .wf-detail .wf-source-table th { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #8b7d6a; padding: 10px 12px; border-bottom: 1px solid #3a2e22; font-weight: 500; }
+   .wf-detail .wf-source-table td { padding: 10px 12px; border-bottom: 0.5px solid #241b14; color: #eadfd0; font-family: 'Space Grotesk', sans-serif; }
+   .wf-detail .wf-source-table td:nth-child(2),
+   .wf-detail .wf-source-table td:nth-child(3) { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #d4c7b5; }
+
+   /* Notebook cards */
+   .wf-detail .wf-nb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+   .wf-detail .wf-nb-card { display: block; background: #241b14; border: 1px solid transparent; border-radius: 3px; padding: 16px; text-decoration: none; color: inherit; transition: border-color 0.15s; }
+   .wf-detail .wf-nb-card:hover { border-color: #ea580c; }
+   .wf-detail .wf-nb-k { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #f59e0b; margin-bottom: 8px; letter-spacing: 0.1em; }
+   .wf-detail .wf-nb-t { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff; margin-bottom: 8px; overflow-wrap: break-word; }
+   .wf-detail .wf-nb-b { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: #d4c7b5; line-height: 1.55; margin-bottom: 10px; }
+   .wf-detail .wf-nb-stack { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8b7d6a; margin-bottom: 8px; }
+   .wf-detail .wf-nb-link { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #f59e0b; }
+
+   /* Limits */
+   .wf-detail .wf-limits { list-style: none; padding: 0; margin: 0; }
+   .wf-detail .wf-limits li { padding: 10px 0; border-bottom: 0.5px solid #241b14; color: #d4c7b5; font-family: 'Space Grotesk', sans-serif; font-size: 13px; line-height: 1.6; }
+   .wf-detail .wf-limits li:last-child { border-bottom: 0; }
+   .wf-detail .wf-limits strong { color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 500; }
+
+   /* Role badges on this page (markup uses uppercase class names) */
+   .wf-detail .role-badge-GIS { background: #ea580c; }
+   .wf-detail .role-badge-DE  { background: #f59e0b; }
+
+   /* Responsive */
+   @media (max-width: 1000px) {
+     .wf-detail .wf-head { flex-direction: column; align-items: flex-start; }
+     .wf-detail .wf-head-right { justify-content: flex-start; }
+   }
+   @media (max-width: 780px) {
+     .wf-detail .wf-split,
+     .wf-detail .wf-density-row,
+     .wf-detail .wf-two-col,
+     .wf-detail .wf-nb-grid { grid-template-columns: 1fr; }
+     .wf-detail .wf-headline-t { font-size: 17px; }
+     .wf-detail .wf-pct { font-size: 22px; }
+   }
