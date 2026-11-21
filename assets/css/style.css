@@ -1875,7 +1875,6 @@
    .wa-detail .wa-search-field { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 8px; width: 100%; background: #121014; border: 0.5px solid #2e2834; border-radius: 3px; color: #e8e5e9; box-sizing: border-box; transition: border-color 0.12s; }
    .wa-detail .wa-search-field::placeholder { color: #8d7f99; }
    .wa-detail .wa-search-field:focus { outline: none; border-color: #a855f7; }
-   .wa-detail .wa-search-field.is-missing { border-color: #c084fc; }
 
    /* Map embed */
    .wa-detail .wa-map-wrap { background: #121014; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }

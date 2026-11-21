@@ -355,7 +355,7 @@
    * when its embed region approaches the viewport, then wire the left-rail
    * indicator buttons + city-search input to the embedded map via postMessage.
    * The listener that receives these messages lives in the Washington repo's
-   * js/main.js — see the deep-link patch pushed there.
+   * js/main.js (already deployed on GitHub Pages).
    */
   window.addEventListener('load', () => {
     let detail = select('.wa-detail');
@@ -381,10 +381,20 @@
     }
 
     // --- Message pipe to the embedded live map ---
+    // postMessage is fire-and-forget: if the iframe's listener isn't set up
+    // yet (map.on('style.load') hasn't fired), the message is lost. Resend
+    // the same message a few times over ~2 seconds so the first click after
+    // page open still lands once the live app is ready to receive it.
     const send = (data) => {
-      // Ensure the iframe has a src before we try to talk to it
       load();
-      if (frame.contentWindow) frame.contentWindow.postMessage(data, '*');
+      if (!frame.contentWindow) return;
+      let tries = 0;
+      const attempt = () => {
+        if (tries++ > 8) return;
+        try { frame.contentWindow.postMessage(data, '*'); } catch (_) {}
+        setTimeout(attempt, 250);
+      };
+      attempt();
     };
 
     // Indicator buttons: update local active state, scroll the embed into view,
