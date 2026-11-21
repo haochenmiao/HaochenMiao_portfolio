@@ -351,6 +351,78 @@
   });
 
   /**
+   * Washington Socioeconomic Atlas detail: lazy-load the live map iframe only
+   * when its embed region approaches the viewport, then wire the left-rail
+   * indicator buttons + city-search input to the embedded map via postMessage.
+   * The listener that receives these messages lives in the Washington repo's
+   * js/main.js — see the deep-link patch pushed there.
+   */
+  window.addEventListener('load', () => {
+    let detail = select('.wa-detail');
+    if (!detail) return;
+    let shell = detail.querySelector('.wa-iframe-shell');
+    let frame = shell && shell.querySelector('iframe[data-src], iframe[src]');
+    if (!frame) return;
+
+    // --- Lazy load ---
+    const load = () => {
+      let ds = frame.getAttribute('data-src');
+      if (ds) { frame.setAttribute('src', ds); frame.removeAttribute('data-src'); }
+    };
+    if (typeof IntersectionObserver === 'undefined') {
+      load();
+    } else {
+      let io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { load(); io.disconnect(); }
+        });
+      }, { rootMargin: '200px' });
+      io.observe(frame);
+    }
+
+    // --- Message pipe to the embedded live map ---
+    const send = (data) => {
+      // Ensure the iframe has a src before we try to talk to it
+      load();
+      if (frame.contentWindow) frame.contentWindow.postMessage(data, '*');
+    };
+
+    // Indicator buttons: update local active state, scroll the embed into view,
+    // and dispatch setIndicator to the live map.
+    let buttons = detail.querySelectorAll('.wa-var-item');
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach((b) => { b.classList.remove('on'); b.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('on');
+        btn.setAttribute('aria-selected', 'true');
+        let layerId = btn.getAttribute('data-layer');
+        if (layerId) send({ action: 'openSidebar' });
+        if (layerId) send({ action: 'setIndicator', layerId: layerId });
+        // Bring the map into view so the visitor sees the effect
+        if (shell && shell.getBoundingClientRect().top > window.innerHeight * 0.7) {
+          shell.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+      });
+    });
+
+    // City search: Enter sends flyToCity to the live map.
+    let search = detail.querySelector('#wa-city-search');
+    if (search) {
+      search.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        let city = (search.value || '').trim();
+        if (!city) return;
+        send({ action: 'openSidebar' });
+        send({ action: 'flyToCity', city: city });
+        if (shell && shell.getBoundingClientRect().top > window.innerHeight * 0.7) {
+          shell.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+      });
+    }
+  });
+
+  /**
    * Florida Flood (Cape Coral) detail: 2D/3D view switch with lazy iframe loading
    */
   window.addEventListener('load', () => {

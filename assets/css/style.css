@@ -1833,3 +1833,127 @@
      html.deep-linked #header { height: 60px !important; }
      html.deep-linked #header h1 { font-size: 26px !important; }
    }
+
+   /* ---- Washington Socioeconomic Atlas detail page: Option 2 live-tool mockup ---- */
+
+   .wa-detail { background: #121014; color: #e8e5e9; padding: 60px 0 80px; font-family: 'Space Grotesk', sans-serif; }
+   .wa-detail .container { max-width: 1200px; }
+
+   /* Header */
+   .wa-detail .wa-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 24px; border-bottom: 1px solid #2e2834; padding-bottom: 20px; }
+   .wa-detail .wa-head-right { display: flex; gap: 8px; flex-shrink: 0; }
+   .wa-detail .wa-badges { display: flex; gap: 6px; margin-bottom: 6px; align-items: center; }
+   .wa-detail .wa-live-chip { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 8px; border: 1px solid #a855f7; color: #a855f7; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; }
+   /* !important beats the homepage's global `h1 { font-size: 5rem !important }` */
+   .wa-detail .wa-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px !important; font-weight: 500; color: #fff; margin: 0 0 6px; letter-spacing: -0.01em; line-height: 1.2; }
+   .wa-detail .wa-pitch { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #bfb3c9; max-width: 600px; margin: 0; line-height: 1.55; }
+
+   /* Buttons */
+   .wa-detail .btn-wa { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 13px; padding: 9px 16px; border: 1px solid #3a3340; color: #fff; background: transparent; text-decoration: none; border-radius: 3px; transition: all 0.15s; }
+   .wa-detail .btn-wa.primary { background: #a855f7; border-color: #a855f7; }
+   .wa-detail .btn-wa.ghost { color: #bfb3c9; }
+   .wa-detail .btn-wa:hover { background: #1f1a24; }
+   .wa-detail .btn-wa.primary:hover { background: #c084fc; border-color: #c084fc; color: #121014; }
+
+   /* Tool grid */
+   .wa-detail .wa-toolgrid { display: grid; grid-template-columns: 220px 1fr 220px; gap: 14px; margin-bottom: 36px; align-items: start; }
+   .wa-detail .wa-rail { background: #1a1620; border-radius: 4px; padding: 14px; min-width: 0; }
+   .wa-detail .wa-rail-head { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #8d7f99; margin-bottom: 10px; }
+   .wa-detail .wa-rail-caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8d7f99; line-height: 1.5; margin-top: 6px; }
+
+   /* Variable list */
+   .wa-detail .wa-var-list { list-style: none; padding: 0; margin: 0; }
+   .wa-detail .wa-var-list li { list-style: none; }
+   /* Full-width clickable button that mirrors the live app's layer toggle */
+   .wa-detail .wa-var-item { display: flex; align-items: center; gap: 8px; width: 100%; padding: 7px 9px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: #bfb3c9; background: transparent; border: 0; border-radius: 3px; margin-bottom: 3px; cursor: pointer; text-align: left; transition: background 0.12s, color 0.12s; }
+   .wa-detail .wa-var-item:hover { background: rgba(168, 85, 247, 0.08); color: #fff; }
+   .wa-detail .wa-var-item:focus-visible { outline: 2px solid #a855f7; outline-offset: 2px; }
+   .wa-detail .wa-var-item.on { background: rgba(168, 85, 247, 0.15); color: #fff; border-left: 2px solid #a855f7; padding-left: 7px; }
+   .wa-detail .wa-swatch { width: 4px; height: 14px; border-radius: 1px; background: linear-gradient(0deg, #3d1a5c, #a855f7, #f0abfc); flex-shrink: 0; }
+
+   /* Real search input, styled like the previous static look */
+   .wa-detail .wa-search-field { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 8px; width: 100%; background: #121014; border: 0.5px solid #2e2834; border-radius: 3px; color: #e8e5e9; box-sizing: border-box; transition: border-color 0.12s; }
+   .wa-detail .wa-search-field::placeholder { color: #8d7f99; }
+   .wa-detail .wa-search-field:focus { outline: none; border-color: #a855f7; }
+   .wa-detail .wa-search-field.is-missing { border-color: #c084fc; }
+
+   /* Map embed */
+   .wa-detail .wa-map-wrap { background: #121014; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+   .wa-detail .wa-iframe-shell { position: relative; width: 100%; aspect-ratio: 1 / 1; }
+   .wa-detail .wa-iframe-shell iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+   .wa-detail .wa-iframe-caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8d7f99; padding: 8px 12px; background: #1a1620; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+   .wa-detail .wa-iframe-caption a { color: #a855f7; text-decoration: none; flex-shrink: 0; }
+   .wa-detail .wa-iframe-caption a:hover { text-decoration: underline; }
+
+   /* Legend + tract card */
+   .wa-detail .wa-gradient-bar { height: 10px; border-radius: 2px; background: linear-gradient(90deg, #3d1a5c, #7a2e96, #a855f7, #c084fc, #f0abfc); margin-bottom: 4px; }
+   .wa-detail .wa-legend-ends { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #8d7f99; margin-bottom: 8px; }
+   .wa-detail .wa-tract-card { background: #121014; border: 0.5px solid #2e2834; border-radius: 3px; padding: 10px; }
+   .wa-detail .wa-tract-id { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8d7f99; letter-spacing: 0.05em; }
+   .wa-detail .wa-tract-name { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: #fff; font-weight: 500; margin: 3px 0 8px; }
+   .wa-detail .wa-tract-rows { display: flex; flex-direction: column; }
+   .wa-detail .wa-tract-row { display: flex; justify-content: space-between; font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #bfb3c9; padding: 4px 0; border-bottom: 0.5px solid #2a252e; }
+   .wa-detail .wa-tract-row:last-child { border-bottom: 0; }
+   .wa-detail .wa-tract-v { font-family: 'JetBrains Mono', monospace; color: #fff; }
+   .wa-detail .wa-dist-wrap { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid #2a252e; }
+   .wa-detail .wa-dist-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #c084fc; margin-bottom: 4px; }
+   .wa-detail .wa-dist-bar { position: relative; height: 6px; background: linear-gradient(90deg, #3d1a5c, #a855f7, #f0abfc); border-radius: 3px; }
+   .wa-detail .wa-dist-marker { position: absolute; top: -3px; width: 2px; height: 12px; background: #fff; }
+
+   /* Sections */
+   .wa-detail .wa-section { margin-bottom: 44px; }
+   .wa-detail .wa-h2 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; margin: 0 0 14px; font-weight: 500; }
+   .wa-detail .wa-h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #fff; margin: 0 0 8px; font-weight: 500; }
+   .wa-detail .wa-p,
+   .wa-detail .wa-lede { font-family: 'Space Grotesk', sans-serif; color: #bfb3c9; font-size: 14px; line-height: 1.65; margin: 0 0 10px; }
+   .wa-detail .wa-footnote { color: #8d7f99; font-size: 12px; font-family: 'JetBrains Mono', monospace; margin-top: 8px; }
+   .wa-detail .wa-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+   .wa-detail .wa-three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+   /* Interactions + formula + ramp demo */
+   .wa-detail .wa-interaction { background: #1a1620; border-radius: 3px; padding: 14px; border-top: 2px solid #a855f7; }
+   .wa-detail .wa-interaction-k { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a855f7; margin-bottom: 6px; }
+   .wa-detail .wa-interaction-t { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #fff; font-weight: 500; margin-bottom: 4px; }
+   .wa-detail .wa-interaction-b { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: #bfb3c9; line-height: 1.55; }
+   .wa-detail .wa-formula { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #f0abfc; background: #1a1620; border-radius: 3px; padding: 10px 12px; margin: 10px 0; }
+   .wa-detail .wa-ramp-demo { margin-top: 16px; }
+   .wa-detail .wa-ramp-bar { height: 14px; border-radius: 2px; background: linear-gradient(90deg, #3d1a5c, #a855f7, #f0abfc); }
+   .wa-detail .wa-ramp-caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8d7f99; margin-top: 4px; }
+
+   /* Source table */
+   .wa-detail .wa-source-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+   .wa-detail .wa-source-table th { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #8d7f99; padding: 10px 12px; border-bottom: 1px solid #2e2834; font-weight: 500; }
+   .wa-detail .wa-source-table td { padding: 10px 12px; border-bottom: 0.5px solid #1f1a24; color: #e8e5e9; font-family: 'Space Grotesk', sans-serif; }
+   .wa-detail .wa-source-table td:first-child,
+   .wa-detail .wa-source-table td:nth-child(2) { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #bfb3c9; }
+
+   /* Site pages grid */
+   .wa-detail .wa-pages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+   .wa-detail .wa-page-card { display: block; background: #1a1620; border: 1px solid transparent; border-radius: 3px; padding: 14px; text-decoration: none; color: inherit; transition: border-color 0.15s; }
+   .wa-detail .wa-page-card:hover { border-color: #a855f7; }
+   .wa-detail .wa-page-k { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #a855f7; margin-bottom: 6px; }
+   .wa-detail .wa-page-t { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #fff; font-weight: 500; margin-bottom: 4px; }
+   .wa-detail .wa-page-b { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #bfb3c9; line-height: 1.5; margin-bottom: 8px; }
+   .wa-detail .wa-page-link { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8d7f99; }
+
+   /* Honest limits */
+   .wa-detail .wa-limits { list-style: none; padding: 0; margin: 0; }
+   .wa-detail .wa-limits li { padding: 10px 0; border-bottom: 0.5px solid #1f1a24; color: #bfb3c9; font-family: 'Space Grotesk', sans-serif; font-size: 13px; line-height: 1.6; }
+   .wa-detail .wa-limits li:last-child { border-bottom: 0; }
+   .wa-detail .wa-limits strong { color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 500; }
+
+   /* Role badges on this page (markup uses uppercase class names) */
+   .wa-detail .role-badge-GIS { background: #a855f7; }
+   .wa-detail .role-badge-DV  { background: #c084fc; }
+
+   /* Responsive */
+   @media (max-width: 1000px) {
+     .wa-detail .wa-toolgrid { grid-template-columns: 1fr; }
+     .wa-detail .wa-pages-grid { grid-template-columns: repeat(2, 1fr); }
+   }
+   @media (max-width: 700px) {
+     .wa-detail .wa-head { flex-direction: column; align-items: flex-start; }
+     .wa-detail .wa-two-col,
+     .wa-detail .wa-three-col { grid-template-columns: 1fr; }
+     .wa-detail .wa-pages-grid { grid-template-columns: 1fr; }
+   }

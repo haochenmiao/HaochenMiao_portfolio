@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Washington Socioeconomic Atlas - Haochen Miao</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+    <div id="portfolio-details" class="portfolio-details wa-detail">
+      <div class="container">
+
+        <!-- HEADER -->
+        <header class="wa-head">
+          <div class="wa-head-left">
+            <div class="wa-badges">
+              <span class="role-badge role-badge-GIS">GIS</span>
+              <span class="role-badge role-badge-DV">DV</span>
+              <span class="wa-live-chip">Live</span>
+            </div>
+            <h1 class="wa-title">Washington socioeconomic atlas</h1>
+            <p class="wa-pitch">A 3D census-tract map of Washington where polygon height and color both read the same normalized value, across six equity indicators.</p>
+          </div>
+          <div class="wa-head-right">
+            <a class="btn-wa primary" href="https://haochenmiao.github.io/Washington_Socioeconomic_Map/" target="_blank" rel="noopener">Open live site</a>
+            <a class="btn-wa" href="https://haochenmiao.github.io/Washington_Socioeconomic_Map/map.html" target="_blank" rel="noopener">Jump to map</a>
+            <a class="btn-wa ghost" href="https://github.com/haochenmiao/Washington_Socioeconomic_Map" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </header>
+
+        <!-- LIVE-TOOL MOCKUP BODY -->
+        <div class="wa-toolgrid">
+          <!-- LEFT RAIL: indicator switcher -->
+          <aside class="wa-rail">
+            <div class="wa-rail-head">Indicator</div>
+            <ul class="wa-var-list" role="listbox" aria-label="Map indicator">
+              <li><button type="button" class="wa-var-item"     data-layer="low_birth-extrusion"            role="option" aria-selected="false"><span class="wa-swatch"></span><span class="wa-var-label">Low birth weight</span></button></li>
+              <li><button type="button" class="wa-var-item on"  data-layer="people_color-extrusion"          role="option" aria-selected="true" ><span class="wa-swatch"></span><span class="wa-var-label">People of color</span></button></li>
+              <li><button type="button" class="wa-var-item"     data-layer="population_noHighSchool-extrusion" role="option" aria-selected="false"><span class="wa-swatch"></span><span class="wa-var-label">No high school diploma</span></button></li>
+              <li><button type="button" class="wa-var-item"     data-layer="poverty-extrusion"               role="option" aria-selected="false"><span class="wa-swatch"></span><span class="wa-var-label">Population living in poverty</span></button></li>
+              <li><button type="button" class="wa-var-item"     data-layer="unaffordable-extrusion"          role="option" aria-selected="false"><span class="wa-swatch"></span><span class="wa-var-label">Unaffordable housing</span></button></li>
+              <li><button type="button" class="wa-var-item"     data-layer="unemployed-extrusion"            role="option" aria-selected="false"><span class="wa-swatch"></span><span class="wa-var-label">Unemployment</span></button></li>
+            </ul>
+            <p class="wa-rail-caption">Click an indicator to drive the embedded live map.</p>
+            <div class="wa-search">
+              <div class="wa-rail-head" style="margin-top:14px;">Search</div>
+              <input type="search" class="wa-search-field" id="wa-city-search" placeholder="City name →" aria-label="Fly the map to a Washington city" autocomplete="off">
+              <p class="wa-rail-caption">Try "Seattle", "Capitol Hill" or "Yakima" — press Enter.</p>
+            </div>
+          </aside>
+
+          <!-- CENTER: embedded live map -->
+          <div class="wa-map-wrap">
+            <div class="wa-iframe-shell">
+              <iframe title="Washington 3D socioeconomic map"
+                data-src="https://haochenmiao.github.io/Washington_Socioeconomic_Map/map.html"
+                loading="lazy"></iframe>
+            </div>
+            <div class="wa-iframe-caption">
+              Embedded live map — height and color both encode the same normalized indicator value.
+              <a href="https://haochenmiao.github.io/Washington_Socioeconomic_Map/map.html" target="_blank" rel="noopener">Open full-screen ↗</a>
+            </div>
+          </div>
+
+          <!-- RIGHT RAIL: legend + sample tract card -->
+          <aside class="wa-rail">
+            <div class="wa-rail-head">Legend</div>
+            <div class="wa-gradient-bar"></div>
+            <div class="wa-legend-ends"><span>0.00</span><span>1.00</span></div>
+            <div class="wa-rail-caption" style="margin-bottom:14px;">Min–max normalized · per indicator</div>
+
+            <div class="wa-rail-head">Sample tract</div>
+            <!-- Sample values for layout; live map shows the actual numbers on click. -->
+            <div class="wa-tract-card">
+              <div class="wa-tract-id">FIPS · 53033010100</div>
+              <div class="wa-tract-name">Capitol Hill, Seattle</div>
+
+              <div class="wa-tract-rows">
+                <div class="wa-tract-row"><span>Low birth weight</span><span class="wa-tract-v">0.28</span></div>
+                <div class="wa-tract-row"><span>People of color</span><span class="wa-tract-v">0.71</span></div>
+                <div class="wa-tract-row"><span>No HS diploma</span><span class="wa-tract-v">0.12</span></div>
+                <div class="wa-tract-row"><span>Poverty</span><span class="wa-tract-v">0.42</span></div>
+                <div class="wa-tract-row"><span>Unaffordable housing</span><span class="wa-tract-v">0.88</span></div>
+                <div class="wa-tract-row"><span>Unemployment</span><span class="wa-tract-v">0.35</span></div>
+              </div>
+
+              <div class="wa-dist-wrap">
+                <div class="wa-dist-label">People of color · 0.71</div>
+                <div class="wa-dist-bar"><span class="wa-dist-marker" style="left:71%"></span></div>
+                <div class="wa-rail-caption">↑ this tract's position in the statewide distribution</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- INTERACTION STRIP -->
+        <section class="wa-section" id="wa-interactions">
+          <h2 class="wa-h2">Three interactions worth trying</h2>
+          <div class="wa-three-col">
+            <div class="wa-interaction">
+              <div class="wa-interaction-k">01</div>
+              <div class="wa-interaction-t">Switch the indicator</div>
+              <div class="wa-interaction-b">The left menu swaps which of the six variables drives the map. Height and color update together — every tract re-extrudes.</div>
+            </div>
+            <div class="wa-interaction">
+              <div class="wa-interaction-k">02</div>
+              <div class="wa-interaction-t">Click a tract</div>
+              <div class="wa-interaction-b">Any tract pops a card with its FIPS, name, the active indicator's value, and a marker showing where that value sits in the statewide distribution.</div>
+            </div>
+            <div class="wa-interaction">
+              <div class="wa-interaction-k">03</div>
+              <div class="wa-interaction-t">Search by city</div>
+              <div class="wa-interaction-b">The search box uses a Maps-of-World city-coordinate CSV to fly the camera to a place. Useful for comparing urban and rural tracts side by side.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- METHODS + ENCODING -->
+        <section class="wa-section" id="wa-methods">
+          <h2 class="wa-h2">How the encoding works</h2>
+          <div class="wa-two-col">
+            <div>
+              <h3 class="wa-h3">One value, two channels</h3>
+              <p class="wa-p">Each indicator is min-max normalized to a 0–1 scale so values are comparable across variables that live on very different ranges (low birth weight runs 0–15%, unaffordable housing runs 10–75%+).</p>
+              <div class="wa-formula">v_n = (v − v_min) / (v_max − v_min)</div>
+              <p class="wa-p">That single normalized number then drives both the polygon's height (extrusion in meters) and its color stop on a purple ramp. Height and color agree — a short dim tract reads "low" from both cues, a tall bright tract reads "high."</p>
+            </div>
+            <div>
+              <h3 class="wa-h3">Why clip to land</h3>
+              <p class="wa-p">Census tract geometries extend into Puget Sound and the Pacific. Without clipping, coastal tracts render as enormous water polygons that pull the eye away from populated areas. The build clips every tract to the Census cartographic land boundary before rendering.</p>
+              <div class="wa-ramp-demo">
+                <div class="wa-ramp-bar"></div>
+                <div class="wa-ramp-caption">Low <span style="float:right;">High</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DATA SOURCES TABLE -->
+        <section class="wa-section" id="wa-data">
+          <h2 class="wa-h2">Data sources</h2>
+          <p class="wa-lede">Everything is public; nothing is synthesized.</p>
+          <table class="wa-source-table">
+            <thead>
+              <tr><th>Layer</th><th>Source</th><th>Role in the build</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Low birth weight</td><td>Washington Geospatial Open Data Portal</td><td>Indicator layer (tract)</td></tr>
+              <tr><td>People of color</td><td>Washington Geospatial Open Data Portal</td><td>Indicator layer (tract)</td></tr>
+              <tr><td>No high school diploma</td><td>Washington Geospatial Open Data Portal</td><td>Indicator layer (tract)</td></tr>
+              <tr><td>Population living in poverty</td><td>Washington Geospatial Open Data Portal</td><td>Indicator layer (tract)</td></tr>
+              <tr><td>Unaffordable housing</td><td>Washington Geospatial Open Data Portal</td><td>Indicator layer (tract)</td></tr>
+              <tr><td>Unemployment</td><td>Washington Geospatial Open Data Portal</td><td>Indicator layer (tract)</td></tr>
+              <tr><td>Land boundary</td><td>US Census Bureau cartographic boundary file</td><td>Clips tracts to land</td></tr>
+              <tr><td>City coordinates</td><td>Maps of World (converted to CSV)</td><td>Powers the location search</td></tr>
+            </tbody>
+          </table>
+          <p class="wa-footnote">Indicator vintages vary by dataset. Check the live data_info.html page for the exact publication dates at the time of use.</p>
+        </section>
+
+        <!-- SITE ARCHITECTURE: four live pages -->
+        <section class="wa-section" id="wa-pages">
+          <h2 class="wa-h2">The live site is four pages</h2>
+          <div class="wa-pages-grid">
+            <a class="wa-page-card" href="https://haochenmiao.github.io/Washington_Socioeconomic_Map/" target="_blank" rel="noopener">
+              <div class="wa-page-k">01</div>
+              <div class="wa-page-t">Intro + disclaimer</div>
+              <div class="wa-page-b">What the map shows, what it doesn't, and the limits a reader should carry into it.</div>
+              <div class="wa-page-link">index.html ↗</div>
+            </a>
+            <a class="wa-page-card" href="https://haochenmiao.github.io/Washington_Socioeconomic_Map/map.html" target="_blank" rel="noopener">
+              <div class="wa-page-k">02</div>
+              <div class="wa-page-t">Interactive map</div>
+              <div class="wa-page-b">The 3D view — switch indicators, click tracts, search a city.</div>
+              <div class="wa-page-link">map.html ↗</div>
+            </a>
+            <a class="wa-page-card" href="https://haochenmiao.github.io/Washington_Socioeconomic_Map/data_info.html" target="_blank" rel="noopener">
+              <div class="wa-page-k">03</div>
+              <div class="wa-page-t">Data details</div>
+              <div class="wa-page-b">Per-indicator source, vintage, and recommended companion datasets for deeper analysis.</div>
+              <div class="wa-page-link">data_info.html ↗</div>
+            </a>
+            <a class="wa-page-card" href="https://haochenmiao.github.io/Washington_Socioeconomic_Map/about_me.html" target="_blank" rel="noopener">
+              <div class="wa-page-k">04</div>
+              <div class="wa-page-t">About + goals</div>
+              <div class="wa-page-b">The team, the brief, and why equity data for Washington deserves more visible tooling.</div>
+              <div class="wa-page-link">about_me.html ↗</div>
+            </a>
+          </div>
+        </section>
+
+        <!-- HONEST LIMITS -->
+        <section class="wa-section" id="wa-honesty">
+          <h2 class="wa-h2">Honest limits</h2>
+          <ul class="wa-limits">
+            <li><strong>No statistical inference.</strong> The map describes spatial patterns in six normalized variables — it does not claim causation, model outcomes, or forecast change.</li>
+            <li><strong>Vintages vary.</strong> The six indicators were pulled from the Washington Geospatial Open Data Portal at different times. A rerun of the build would need to re-align them.</li>
+            <li><strong>Proxies, not outcomes.</strong> "People of color" and "unaffordable housing" are structural proxies for equity, not measurements of lived experience. Read alongside, not instead of, community voice.</li>
+            <li><strong>Known README issue.</strong> The repository's README links the Unemployment dataset to a page that actually lists toxic releases from facilities. The map itself uses the correct unemployment file — the README link is wrong.</li>
+            <li><strong>Mapbox token required.</strong> The 3D view loads a token at runtime; a fork needs its own token to serve the map.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main><!-- End #main -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
