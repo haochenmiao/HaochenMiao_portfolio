@@ -217,6 +217,49 @@
 
 
   /**
+   * Blogs section: topic filter. Strictly scoped to #blog-filters and .blog-grid so
+   * it never collides with the portfolio Isotope code above. No jQuery, no Isotope —
+   * a plain show/hide with a 180ms opacity fade and display:none after.
+   */
+  window.addEventListener('load', () => {
+    let filters = document.querySelectorAll('#blog-filters li');
+    let items = document.querySelectorAll('.blog-grid .blog-item');
+    if (!filters.length || !items.length) return;
+
+    // Baseline so the fade reads the same on first click as on later ones
+    items.forEach((el) => {
+      el.style.transition = 'opacity 180ms ease';
+      el.style.opacity = '1';
+    });
+
+    filters.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        filters.forEach((li) => li.classList.remove('filter-active'));
+        btn.classList.add('filter-active');
+
+        let sel = btn.getAttribute('data-filter') || '*';
+        let topicClass = sel === '*' ? null : sel.replace(/^\./, '');
+
+        items.forEach((item) => {
+          let shouldShow = !topicClass || item.classList.contains(topicClass);
+          if (shouldShow) {
+            // Restore flex-basis first, then fade in next frame so the transition fires
+            item.style.display = '';
+            requestAnimationFrame(() => { item.style.opacity = '1'; });
+          } else {
+            item.style.opacity = '0';
+            setTimeout(() => {
+              // Guard against a rapid re-click that flipped it back to visible
+              if (item.style.opacity === '0') item.style.display = 'none';
+            }, 180);
+          }
+        });
+      });
+    });
+  });
+
+  /**
    * Portfolio cards: whole wrap is clickable, pointing at the inner details link.
    * Prefers a .portfolio-details-lightbox target over a .portfolio-lightbox image target
    * so the click opens the detail PAGE, not the image gallery.
