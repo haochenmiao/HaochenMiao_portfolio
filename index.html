@@ -46,9 +46,32 @@
       if (!h || h.length < 2 || h === '#header') return;
       document.documentElement.classList.add('deep-linked');
       var s = document.createElement('style');
+      s.id = 'deep-link-style';
       s.textContent = 'section' + h + '{top:100px!important;bottom:auto!important;opacity:1!important;padding-bottom:45px!important;z-index:3!important}' +
                       '@media(max-width:768px){section' + h + '{top:80px!important}}';
       document.head.appendChild(s);
+
+      // The injected !important override only has to survive the first paint —
+      // once main.js hands section visibility to the .section-show class
+      // (~350ms after load) it becomes stale. Left in place it keeps the
+      // deep-linked section pinned on top (opacity:1, z-index:3), so switching
+      // to another nav section afterward appears to do nothing until a full
+      // reload. Remove it once the normal mechanism is active, and also on the
+      // first nav interaction so a quick click is never blocked.
+      var cleaned = false;
+      function cleanupDeepLink() {
+        if (cleaned) return;
+        cleaned = true;
+        document.documentElement.classList.remove('deep-linked');
+        var el = document.getElementById('deep-link-style');
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      }
+      window.addEventListener('load', function () { setTimeout(cleanupDeepLink, 500); });
+      document.addEventListener('click', function (e) {
+        if (e.target.closest && e.target.closest('#navbar .nav-link, #header h1 a')) {
+          cleanupDeepLink();
+        }
+      }, true);
 
       // If this is a return-to-portfolio with a specific card, keep the body
       // visibility hidden until the scroll is in place. The class is removed by
