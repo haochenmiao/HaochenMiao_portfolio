@@ -16,6 +16,7 @@ Platform badges:
 - LinkedIn — solid #0a66c2 bg, white "in" prefix
 - Dev.to — black bg, white "</>" prefix
 - Personal — transparent, 0.5px white border
+- ArcGIS StoryMaps — solid #007ac2 bg, white text, "◴" prefix
 
 Card anatomy (top to bottom):
 1. 3px solid top border in the topic color
@@ -60,6 +61,6 @@ Leave the markup extensible — a third card should be one copy-paste.
 
 Allowed values:
 - TOPIC_CLASS / TOPIC_SHORT: ml, ai, gis, de, civic
-- PLATFORM: medium, linkedin, devto, personal
-- PLATFORM_LABEL: Medium, LinkedIn, Dev.to, Personal
+- PLATFORM: medium, linkedin, devto, personal, arcgis
+- PLATFORM_LABEL: Medium, LinkedIn, Dev.to, Personal, ArcGIS StoryMaps
 - TOPIC_LABEL: ML, Applied AI, GIS, Data eng, Civic tech

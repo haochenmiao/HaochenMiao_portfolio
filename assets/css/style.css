@@ -1320,6 +1320,8 @@
    .plat-devto { background: #0a0a0a; color: #fff; border: 0.5px solid #333; font-family: 'JetBrains Mono', monospace; }
    .plat-devto::before { content: "</>"; font-weight: 700; font-size: 9px; }
    .plat-personal { background: transparent; color: #fff; border: 0.5px solid rgba(255,255,255,0.4); }
+   .plat-arcgis { background: #007ac2; color: #fff; font-family: 'Space Grotesk', sans-serif; }
+   .plat-arcgis::before { content: "◴"; font-weight: 700; font-size: 11px; }
 
    .topic {
      font-size: 10px;
